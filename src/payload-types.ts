@@ -342,6 +342,7 @@ export interface Post {
 export interface User {
   id: number;
   name?: string | null;
+  roles?: ('admin' | 'user')[] | null;
   updatedAt: string;
   createdAt: string;
   email: string;
