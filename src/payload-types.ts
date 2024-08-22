@@ -622,6 +622,7 @@ export interface Header {
  */
 export interface Footer {
   id: number;
+  message?: string | null;
   navItems?:
     | {
         link: {
