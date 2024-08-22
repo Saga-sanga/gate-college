@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
-import { postgresAdapter } from '@payloadcms/db-postgres'
+// import { postgresAdapter } from '@payloadcms/db-postgres'
+import { sqliteAdapter } from '@payloadcms/db-sqlite'
 
 import { payloadCloudPlugin } from '@payloadcms/plugin-cloud'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
@@ -47,11 +48,6 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
 
 export default buildConfig({
   admin: {
-    // autoLogin: {
-    //   email: 'dev@payload.com',
-    //   password: '12345',
-    //   prefillOnly: true,
-    // },
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeLogin` statement on line 15.
@@ -119,9 +115,15 @@ export default buildConfig({
       ]
     },
   }),
-  db: postgresAdapter({
-    pool: {
-      connectionString: process.env.DATABASE_URI || '',
+  // db: postgresAdapter({
+  //   pool: {
+  //     connectionString: process.env.DATABASE_URI || '',
+  //   },
+  // }),
+  db: sqliteAdapter({
+    client: {
+      url: process.env.TURSO_DATABASE_URL,
+      authToken: process.env.TURSO_AUTH_TOKEN,
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users],

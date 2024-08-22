@@ -20,6 +20,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+
 export const Pages: CollectionConfig = {
   slug: 'pages',
   access: {
