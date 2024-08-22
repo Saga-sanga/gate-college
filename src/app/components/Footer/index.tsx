@@ -26,7 +26,7 @@ export async function Footer() {
               />
             </picture>
           </Link>
-          <p>{footer.message}</p>
+          <p>{footer.tagline}</p>
         </div>
 
         <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">

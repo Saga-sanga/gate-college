@@ -10,7 +10,7 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
-      name: 'message',
+      name: 'tagline',
       type: 'textarea',
     },
     {
