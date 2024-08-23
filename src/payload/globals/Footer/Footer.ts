@@ -12,6 +12,8 @@ export const Footer: GlobalConfig = {
     {
       name: 'tagline',
       type: 'textarea',
+      // required: true,
+      // defaultValue: '',
     },
     {
       name: 'navItems',

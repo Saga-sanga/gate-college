@@ -1,5 +1,4 @@
 // storage-adapter-import-placeholder
-// import { postgresAdapter } from '@payloadcms/db-postgres'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 
 import { payloadCloudPlugin } from '@payloadcms/plugin-cloud'
@@ -33,6 +32,7 @@ import { MainFooter } from './payload/globals/MainFooter/MainFooter'
 import { revalidateRedirects } from './payload/hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Page, Post } from 'src/payload-types'
+import { Hero } from './payload/globals/Hero/Hero'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -116,11 +116,6 @@ export default buildConfig({
       ]
     },
   }),
-  // db: postgresAdapter({
-  //   pool: {
-  //     connectionString: process.env.DATABASE_URI || '',
-  //   },
-  // }),
   db: sqliteAdapter({
     client: {
       url: process.env.TURSO_DATABASE_URL,
@@ -139,7 +134,7 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [Header, Footer],
+  globals: [Header, Footer, Hero],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],

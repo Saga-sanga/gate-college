@@ -15,7 +15,7 @@ export const seed: PayloadHandler = async (req): Promise<Response> => {
 
     await seedScript({ payload, req })
 
-    // Finalise transactiojn
+    // Finalise transaction
     await commitTransaction(req)
 
     return Response.json({ success: true })
