@@ -1,5 +1,8 @@
-import PageTemplate, { generateMetadata } from './[slug]/page'
+import { generateMetadata } from './[slug]/page'
+import { MainHero } from '@/components/MainHero'
 
-export default PageTemplate
+export default async function Page() {
+  return <MainHero />
+}
 
 export { generateMetadata }
