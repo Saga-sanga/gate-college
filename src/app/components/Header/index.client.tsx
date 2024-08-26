@@ -30,8 +30,8 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ header }) => {
   }, [headerTheme])
 
   return (
-    <div className="backdrop-blur-md">
-      <header
+    <header className="dark:bg-card">
+      <div
         className="container relative z-20 py-6 flex justify-between"
         {...(theme ? { 'data-theme': theme } : {})}
       >
@@ -39,7 +39,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ header }) => {
           <Logo />
         </Link>
         <HeaderNav header={header} />
-      </header>
-    </div>
+      </div>
+    </header>
   )
 }
