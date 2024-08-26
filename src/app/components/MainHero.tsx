@@ -14,7 +14,7 @@ export async function MainHero() {
     <section className="text-white relative flex font-serif items-end">
       <div className="container mb-10 z-10">
         <div className="max-w-[34rem]">
-          <RichText className="mb-6" content={richText} />
+          <RichText className="mb-6" content={richText} enableGutter={false} />
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex gap-4">
               {links.map(({ link }, i) => {
