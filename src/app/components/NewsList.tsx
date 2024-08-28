@@ -1,6 +1,10 @@
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import config from '@payload-config'
 import { CollectionArchive } from './CollectionArchive'
+import { CMSLink } from './Link'
+import Link from 'next/link'
+import { cn } from '@/utilities/cn'
+import { buttonVariants } from './ui/button'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -20,24 +24,11 @@ export async function NewsList() {
         <hr className="mt-5" />
       </div>
       <CollectionArchive posts={posts.docs} />
-    </section>
-  )
-}
-
-function NewsCard() {
-  return (
-    <article>
-      <span>August 20, 2024</span>
-      <div>
-        <div>
-          <h2>Something interesting that happened</h2>
-          <p>
-            In fermentum et sollicitudin ac orci phasellus. Sit amet commodo nulla facilisi nullam
-            vehicula ipsum a. Et sollicitudin ac orci phasellus egestas. Arcu cursus euismod quis
-            viverra nibh cras pulvinar mattis.
-          </p>
-        </div>
+      <div className="container text-center">
+        <Link href="/posts" className={cn(buttonVariants(), 'capitalize')}>
+          See More News
+        </Link>
       </div>
-    </article>
+    </section>
   )
 }

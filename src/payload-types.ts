@@ -93,7 +93,7 @@ export interface Page {
           id?: string | null;
         }[]
       | null;
-    media?: number | Media | null;
+    media?: (number | null) | Media;
   };
   layout: (
     | {
@@ -232,7 +232,7 @@ export interface Page {
   )[];
   meta?: {
     title?: string | null;
-    image?: number | Media | null;
+    image?: (number | null) | Media;
     description?: string | null;
   };
   publishedAt?: string | null;
@@ -320,7 +320,7 @@ export interface Post {
   categories?: (number | Category)[] | null;
   meta?: {
     title?: string | null;
-    image?: number | Media | null;
+    image?: (number | null) | Media;
     description?: string | null;
   };
   publishedAt?: string | null;
@@ -681,7 +681,7 @@ export interface HeroMain {
           id?: string | null;
         }[]
       | null;
-    media?: number | Media | null;
+    media?: (number | null) | Media;
   };
   updatedAt?: string | null;
   createdAt?: string | null;
