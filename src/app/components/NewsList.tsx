@@ -1,7 +1,6 @@
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import config from '@payload-config'
 import { CollectionArchive } from './CollectionArchive'
-import { CMSLink } from './Link'
 import Link from 'next/link'
 import { cn } from '@/utilities/cn'
 import { buttonVariants } from './ui/button'

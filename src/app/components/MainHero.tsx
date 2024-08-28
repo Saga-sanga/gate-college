@@ -8,7 +8,9 @@ import { CMSLink } from './Link'
 export async function MainHero() {
   const {
     hero: { richText, links, media },
-  } = (await getCachedGlobal('hero-main')()) as HeroMain
+  } = (await getCachedGlobal('hero-main', 1)()) as HeroMain
+
+  console.log('main hero', media)
 
   return (
     <section className="text-white relative flex font-serif items-end">
