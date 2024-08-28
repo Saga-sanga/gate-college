@@ -15,7 +15,13 @@ export async function NewsList() {
     collection: 'posts',
     depth: 1,
     limit: 9,
+    where: {
+      _status: {
+        equals: 'published',
+      },
+    },
   })
+
   return (
     <section className="py-8 space-y-10">
       <div className="container">

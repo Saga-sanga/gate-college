@@ -17,6 +17,11 @@ export default async function Page() {
     collection: 'posts',
     depth: 1,
     limit: 12,
+    where: {
+      _status: {
+        equals: 'published',
+      },
+    },
   })
 
   return (
