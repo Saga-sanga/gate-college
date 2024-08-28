@@ -16,6 +16,7 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    events: Event;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -518,6 +519,39 @@ export interface Form {
         id?: string | null;
       }[]
     | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: number;
+  title: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  meta?: {
+    title?: string | null;
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  eventDate?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }

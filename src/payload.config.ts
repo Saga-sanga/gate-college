@@ -32,6 +32,7 @@ import { revalidateRedirects } from './payload/hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Page, Post } from 'src/payload-types'
 import { Hero } from './payload/globals/Hero/Hero'
+import { Events } from './payload/collections/Events'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -122,7 +123,7 @@ export default buildConfig({
       // authToken: process.env.TURSO_AUTH_TOKEN,
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users],
+  collections: [Pages, Posts, Media, Categories, Users, Events],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [

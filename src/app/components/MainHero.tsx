@@ -10,8 +10,6 @@ export async function MainHero() {
     hero: { richText, links, media },
   } = (await getCachedGlobal('hero-main', 1)()) as HeroMain
 
-  console.log('main hero', media)
-
   return (
     <section className="text-white relative flex font-serif items-end">
       <div className="container mb-10 z-10">

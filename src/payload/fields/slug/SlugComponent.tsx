@@ -43,7 +43,7 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
   })
 
   useEffect(() => {
-    if (checkboxValue) setValue(formatSlug(fieldToUseValue))
+    if (checkboxValue) setValue(formatSlug(fieldToUseValue ?? ''))
   }, [fieldToUseValue, checkboxValue])
 
   const handleLock = useCallback(

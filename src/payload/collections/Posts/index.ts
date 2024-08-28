@@ -86,9 +86,9 @@ export const Posts: CollectionConfig = {
             {
               name: 'relatedPosts',
               type: 'relationship',
-              admin: {
-                position: 'sidebar',
-              },
+              // admin: {
+              //   position: 'sidebar',
+              // },
               filterOptions: ({ id }) => {
                 return {
                   id: {
@@ -102,9 +102,9 @@ export const Posts: CollectionConfig = {
             {
               name: 'categories',
               type: 'relationship',
-              admin: {
-                position: 'sidebar',
-              },
+              // admin: {
+              //   position: 'sidebar',
+              // },
               hasMany: true,
               relationTo: 'categories',
             },
