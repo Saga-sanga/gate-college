@@ -1,5 +1,6 @@
 'use client'
 import { cn } from '@/utilities/cn'
+import { formatDateLocale } from '@/utilities/formatDateLocale'
 import useClickableCard from '@/utilities/useClickableCard'
 import Link from 'next/link'
 import React, { Fragment } from 'react'
@@ -19,7 +20,7 @@ export const Card: React.FC<{
   const { card, link } = useClickableCard({})
   const { className, doc, relationTo, showCategories, title: titleFromProps } = props
 
-  const { slug, categories, meta, title } = doc || {}
+  const { slug, categories, meta, title, publishedAt } = doc || {}
   const { description, image: metaImage } = meta || {}
 
   const hasCategories = categories && Array.isArray(categories) && categories.length > 0
@@ -40,32 +41,35 @@ export const Card: React.FC<{
         {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="360px" />}
       </div>
       <div className="p-4">
-        {showCategories && hasCategories && (
-          <div className="uppercase text-sm mb-4">
-            {showCategories && hasCategories && (
-              <div>
-                {categories?.map((category, index) => {
-                  if (typeof category === 'object') {
-                    const { title: titleFromCategory } = category
+        <div className="flex justify-between items-center mb-4">
+          {showCategories && hasCategories && (
+            <div className="uppercase text-sm ">
+              {showCategories && hasCategories && (
+                <div>
+                  {categories?.map((category, index) => {
+                    if (typeof category === 'object') {
+                      const { title: titleFromCategory } = category
 
-                    const categoryTitle = titleFromCategory || 'Untitled category'
+                      const categoryTitle = titleFromCategory || 'Untitled category'
 
-                    const isLast = index === categories.length - 1
+                      const isLast = index === categories.length - 1
 
-                    return (
-                      <Fragment key={index}>
-                        {categoryTitle}
-                        {!isLast && <Fragment>, &nbsp;</Fragment>}
-                      </Fragment>
-                    )
-                  }
+                      return (
+                        <Fragment key={index}>
+                          {categoryTitle}
+                          {!isLast && <Fragment>, &nbsp;</Fragment>}
+                        </Fragment>
+                      )
+                    }
 
-                  return null
-                })}
-              </div>
-            )}
-          </div>
-        )}
+                    return null
+                  })}
+                </div>
+              )}
+            </div>
+          )}
+          <time dateTime={publishedAt}>{formatDateLocale(publishedAt)}</time>
+        </div>
         {titleToUse && (
           <div className="prose">
             <h3>

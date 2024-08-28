@@ -16,5 +16,5 @@ export const formatDateTime = (timestamp: string): string => {
   // const MinMin = (minutes < 10) ? `0${minutes}` : minutes;
   // const SS = (seconds < 10) ? `0${seconds}` : seconds;
 
-  return `${MM}/${DD}/${YYYY}`
+  return `${DD}/${MM}/${YYYY}`
 }
