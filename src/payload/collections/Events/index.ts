@@ -4,6 +4,7 @@ import { Banner } from '@/payload/blocks/Banner'
 import { Code } from '@/payload/blocks/Code'
 import { MediaBlock } from '@/payload/blocks/MediaBlock'
 import { slugField } from '@/payload/fields/slug'
+import { generatePreviewPath } from '@/payload/utilities/generatePreviewPath'
 
 import {
   MetaDescriptionField,
@@ -35,6 +36,16 @@ export const Events: CollectionConfig = {
   admin: {
     defaultColumns: ['title', 'slug', 'eventDate'],
     useAsTitle: 'title',
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          path: `/events/${typeof data?.slug === 'string' ? data.slug : ''}`,
+        })
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+      },
+    },
+    preview: (doc) =>
+      generatePreviewPath({ path: `/events/${typeof doc.slug === 'string' ? doc.slug : ''}` }),
   },
   fields: [
     {

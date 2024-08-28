@@ -45,6 +45,7 @@ export const Posts: CollectionConfig = {
         return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
       },
     },
+    // Generate preview URL
     preview: (doc) =>
       generatePreviewPath({ path: `/posts/${typeof doc?.slug === 'string' ? doc.slug : ''}` }),
     useAsTitle: 'title',
