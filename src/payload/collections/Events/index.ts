@@ -5,6 +5,7 @@ import { Code } from '@/payload/blocks/Code'
 import { MediaBlock } from '@/payload/blocks/MediaBlock'
 import { slugField } from '@/payload/fields/slug'
 import { generatePreviewPath } from '@/payload/utilities/generatePreviewPath'
+import { add } from 'date-fns'
 
 import {
   MetaDescriptionField,
@@ -113,10 +114,11 @@ export const Events: CollectionConfig = {
       type: 'date',
       admin: {
         date: {
-          pickerAppearance: 'dayAndTime',
+          pickerAppearance: 'dayOnly',
         },
         position: 'sidebar',
       },
+      required: true,
       hooks: {
         beforeChange: [
           ({ siblingData, value }) => {
@@ -124,6 +126,37 @@ export const Events: CollectionConfig = {
               return new Date()
             }
 
+            return value
+          },
+        ],
+      },
+    },
+    {
+      name: 'startTime',
+      type: 'date',
+      admin: {
+        date: {
+          pickerAppearance: 'timeOnly',
+        },
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'endTime',
+      type: 'date',
+      admin: {
+        date: {
+          pickerAppearance: 'timeOnly',
+        },
+        position: 'sidebar',
+      },
+      hooks: {
+        beforeValidate: [
+          ({ siblingData, value }) => {
+            console.log('time', siblingData, value)
+            if (siblingData.startTime > value) {
+              return add(siblingData.startTime, { minutes: 30 })
+            }
             return value
           },
         ],
