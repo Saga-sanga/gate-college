@@ -550,6 +550,7 @@ export interface Event {
     description?: string | null;
   };
   eventDate?: string | null;
+  location?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;

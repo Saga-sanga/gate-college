@@ -129,6 +129,13 @@ export const Events: CollectionConfig = {
         ],
       },
     },
+    {
+      name: 'location',
+      type: 'text',
+      admin: {
+        position: 'sidebar',
+      },
+    },
     ...slugField(),
   ],
   hooks: {
