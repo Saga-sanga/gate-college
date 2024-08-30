@@ -109,7 +109,7 @@ export default function EventsPage() {
                         <CardTitle>{event.title}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <div className="flex flex-col space-y-2 text-sm">
+                        <div className="flex flex-row space-x-8 text-sm">
                           <div className="flex items-center space-x-2 text-muted-foreground">
                             <CalendarDays className="h-4 w-4" />
                             <span>{event.date}</span>

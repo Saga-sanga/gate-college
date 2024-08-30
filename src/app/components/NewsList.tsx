@@ -30,7 +30,7 @@ export async function NewsList() {
       </div>
       <CollectionArchive posts={posts.docs} />
       <div className="container text-center">
-        <Link href="/posts" className={cn(buttonVariants(), 'capitalize')}>
+        <Link href="/posts" className={cn('capitalize fancy-button')}>
           See More News
         </Link>
       </div>

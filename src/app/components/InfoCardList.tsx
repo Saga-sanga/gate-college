@@ -16,7 +16,7 @@ function InfoCard({ info }: Props) {
         <h2 className="font-serif text-3xl">{title}</h2>
         <p>{description}</p>
       </div>
-      <Link href={href} className={cn(buttonVariants({ size: 'lg' }))}>
+      <Link href={href} className="fancy-button-rev capitalize text-center">
         {label}
       </Link>
     </article>
