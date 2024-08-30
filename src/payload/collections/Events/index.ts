@@ -114,7 +114,7 @@ export const Events: CollectionConfig = {
       type: 'date',
       admin: {
         date: {
-          pickerAppearance: 'dayOnly',
+          pickerAppearance: 'dayAndTime',
         },
         position: 'sidebar',
       },
@@ -132,18 +132,9 @@ export const Events: CollectionConfig = {
       },
     },
     {
-      name: 'startTime',
-      type: 'date',
-      admin: {
-        date: {
-          pickerAppearance: 'timeOnly',
-        },
-        position: 'sidebar',
-      },
-    },
-    {
       name: 'endTime',
       type: 'date',
+      required: true,
       admin: {
         date: {
           pickerAppearance: 'timeOnly',
@@ -154,8 +145,8 @@ export const Events: CollectionConfig = {
         beforeValidate: [
           ({ siblingData, value }) => {
             console.log('time', siblingData, value)
-            if (siblingData.startTime > value) {
-              return add(siblingData.startTime, { minutes: 30 })
+            if (siblingData.eventDate > value) {
+              return add(siblingData.eventDate, { minutes: 30 })
             }
             return value
           },
@@ -165,6 +156,7 @@ export const Events: CollectionConfig = {
     {
       name: 'location',
       type: 'text',
+      required: true,
       admin: {
         position: 'sidebar',
       },

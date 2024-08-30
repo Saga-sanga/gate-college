@@ -549,10 +549,9 @@ export interface Event {
     image?: (number | null) | Media;
     description?: string | null;
   };
-  eventDate?: string | null;
-  startTime?: string | null;
-  endTime?: string | null;
-  location?: string | null;
+  eventDate: string;
+  endTime: string;
+  location: string;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;

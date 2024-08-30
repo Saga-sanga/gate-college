@@ -103,6 +103,7 @@ export const seed = async ({
       name: 'Demo Author',
       email: 'demo-author@payloadcms.com',
       password: 'password',
+      roles: ['user'],
     },
     req,
   })
