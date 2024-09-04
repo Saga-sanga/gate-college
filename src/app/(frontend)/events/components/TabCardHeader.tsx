@@ -1,6 +1,7 @@
 'use client'
 import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { getFormattedWeekRange } from '@/utilities/getFormattedWeekRange'
 import { endOfWeek, startOfWeek } from 'date-fns'
 import { Search } from 'lucide-react'
 
@@ -18,27 +19,9 @@ export function TabCardHeader({ date, searchTerm, setSearchTerm, mode = 'day' }:
     year: 'numeric',
   })
 
-  if (date)
-    switch (mode) {
-      case 'week':
-        const startWeek = startOfWeek(date).toLocaleDateString('en-US', {
-          month: 'short',
-          day: 'numeric',
-        })
-        const endWeek = endOfWeek(date).toLocaleDateString('en-US', {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric',
-        })
-        dateString = `${startWeek} - ${endWeek}`
-        break
-      case 'month':
-        dateString = date.toLocaleDateString('en-US', {
-          month: 'long',
-          year: 'numeric',
-        })
-        break
-    }
+  if (date && mode === 'week') {
+    dateString = getFormattedWeekRange(date)
+  }
 
   return (
     <CardHeader>
