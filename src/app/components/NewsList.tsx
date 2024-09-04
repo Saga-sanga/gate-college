@@ -23,7 +23,7 @@ export async function NewsList() {
   })
 
   return (
-    <section className="py-8 space-y-10">
+    <section className="py-20 space-y-10">
       <div className="container">
         <h3 className="font-serif text-lg text-foreground/60">{'News & Announcements'}</h3>
         <hr className="mt-5" />

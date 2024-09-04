@@ -13,7 +13,7 @@ type Props = {
 
 export function EventCard({ event }: Props) {
   return (
-    <Card className="group cursor-pointer hover:shadow-md">
+    <Card className="group cursor-pointer border-none shadow-none bg-muted hover:shadow-lg">
       <CardHeader>
         <CardTitle className="group-hover:text-secondary">{event.title}</CardTitle>
       </CardHeader>

@@ -17,7 +17,7 @@ export function CalendarCard({ today, date, setDate }: Props) {
       <CardContent className="p-0">
         <div className="flex justify-between items-center p-4 border-b">
           <span className="text-lg font-semibold">
-            {date?.toLocaleString('default', { month: 'long', year: 'numeric' })}
+            {date?.toLocaleString('en-US', { day: 'numeric', month: 'long' })}
           </span>
           <Button
             variant="outline"

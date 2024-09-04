@@ -11,9 +11,9 @@ type Props = {
 function InfoCard({ info }: Props) {
   const { title, description, label, href } = info
   return (
-    <article className="flex flex-col border space-y-8 justify-between rounded p-8 shadow-lg">
+    <article className="flex flex-col bg-background space-y-8 justify-between rounded p-8 shadow-lg">
       <div className="space-y-6">
-        <h2 className="font-serif text-3xl">{title}</h2>
+        <h2 className="font-serif text-3xl text-primary">{title}</h2>
         <p>{description}</p>
       </div>
       <Link href={href} className="fancy-button-rev capitalize text-center">
@@ -25,10 +25,12 @@ function InfoCard({ info }: Props) {
 
 export function InfoCardList() {
   return (
-    <section className="container grid py-20 grid-cols-3 gap-20">
-      {infoCardConfig.map((info, i) => (
-        <InfoCard key={i} info={info} />
-      ))}
-    </section>
+    <div className="background-radial-primary">
+      <section className="container grid py-24 grid-cols-3 gap-20">
+        {infoCardConfig.map((info, i) => (
+          <InfoCard key={i} info={info} />
+        ))}
+      </section>
+    </div>
   )
 }

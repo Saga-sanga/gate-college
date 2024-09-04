@@ -50,16 +50,20 @@ export default function EventsPage() {
       <Tabs defaultValue="day" className="w-full">
         <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
           <div className="space-y-6">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="day">Day</TabsTrigger>
               <TabsTrigger value="week">Week</TabsTrigger>
-              <TabsTrigger value="month">Month</TabsTrigger>
+              {
+                //<TabsTrigger value="month">Month</TabsTrigger>
+              }
             </TabsList>
             <CalendarCard date={date} today={today} setDate={setDate} />
           </div>
           <DayTabContent events={events} date={date} />
           <WeekTabContent events={events} date={date} />
-          <MonthTabContent events={events} date={date} />
+          {
+            //<MonthTabContent events={events} date={date} />
+          }
         </div>
       </Tabs>
     </div>

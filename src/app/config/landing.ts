@@ -12,7 +12,7 @@ export const infoCardConfig: InfoCardConfig[] = [
     title: 'What will it cost?',
     description:
       'You can afford a top-tier private education. Find out how tuition and financial aid work, including the Net Price Calculator',
-    label: 'Calculate your fees',
+    label: 'Check your fees',
     href: '/',
   },
   {
