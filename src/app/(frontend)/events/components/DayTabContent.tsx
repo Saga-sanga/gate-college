@@ -6,6 +6,7 @@ import { CalendarDays, Clock, MapPin, Search } from 'lucide-react'
 import { useState } from 'react'
 import { TabCardHeader } from './TabCardHeader'
 import { filterEvents } from '@/utilities/filterEvents'
+import { EventCard } from './EventCard'
 
 type Props = {
   events: {
@@ -30,27 +31,7 @@ export function DayTabContent({ events, date }: Props) {
         <CardContent>
           <div className="space-y-4">
             {filteredEvents.map((event) => (
-              <Card key={event.id}>
-                <CardHeader>
-                  <CardTitle>{event.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-row space-x-8 text-sm">
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <CalendarDays className="h-4 w-4" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <Clock className="h-4 w-4" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <MapPin className="h-4 w-4" />
-                      <span>{event.location}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <EventCard key={event.id} event={event} />
             ))}
           </div>
         </CardContent>
