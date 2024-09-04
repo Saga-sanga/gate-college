@@ -1,12 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Calendar } from '@/components/ui/calendar'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { CalendarDays, Clock, MapPin, Search } from 'lucide-react'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Search } from 'lucide-react'
+import { CalendarCard } from './components/CalendarCard'
+import { DayTabContent } from './components/DayTabContent'
+import { WeekTabContent } from './components/WeekTabContent'
+import { MonthTabContent } from './components/MonthTabContent'
 
 // Mock data for events
 const events = [
@@ -36,17 +38,11 @@ const events = [
 export default function EventsPage() {
   const today = new Date()
   const [date, setDate] = useState<Date | undefined>(today)
-  const [month, setMonth] = useState(today)
-  const [searchTerm, setSearchTerm] = useState('')
 
   // Ensure the selected date is never empty
   useEffect(() => {
     if (!date) setDate(today)
   }, [date])
-
-  const filteredEvents = events.filter((event) =>
-    event.title.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
 
   return (
     <div className="container mx-auto py-6">
@@ -59,77 +55,11 @@ export default function EventsPage() {
               <TabsTrigger value="week">Week</TabsTrigger>
               <TabsTrigger value="month">Month</TabsTrigger>
             </TabsList>
-            <Card>
-              <CardContent className="p-0">
-                <div className="flex justify-between items-center p-4 border-b">
-                  <span className="text-lg font-semibold">
-                    {date?.toLocaleString('default', { month: 'long', year: 'numeric' })}
-                  </span>
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      setDate(today)
-                      setMonth(today)
-                    }}
-                  >
-                    Today
-                  </Button>
-                </div>
-                <Calendar
-                  mode="single"
-                  selected={date}
-                  onSelect={setDate}
-                  month={month}
-                  onMonthChange={setMonth}
-                  className="rounded-md"
-                />
-              </CardContent>
-            </Card>
+            <CalendarCard date={date} today={today} setDate={setDate} />
           </div>
-          <Card className="order-first lg:order-last">
-            <CardHeader>
-              <CardTitle>Events</CardTitle>
-              <CardDescription>Upcoming events for {date?.toDateString()}</CardDescription>
-              <div className="relative">
-                <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search events"
-                  className="pl-8"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-            </CardHeader>
-            <TabsContent value="day">
-              <CardContent>
-                <div className="space-y-4">
-                  {filteredEvents.map((event) => (
-                    <Card key={event.id}>
-                      <CardHeader>
-                        <CardTitle>{event.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex flex-row space-x-8 text-sm">
-                          <div className="flex items-center space-x-2 text-muted-foreground">
-                            <CalendarDays className="h-4 w-4" />
-                            <span>{event.date}</span>
-                          </div>
-                          <div className="flex items-center space-x-2 text-muted-foreground">
-                            <Clock className="h-4 w-4" />
-                            <span>{event.time}</span>
-                          </div>
-                          <div className="flex items-center space-x-2 text-muted-foreground">
-                            <MapPin className="h-4 w-4" />
-                            <span>{event.location}</span>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </CardContent>
-            </TabsContent>
-          </Card>
+          <DayTabContent events={events} date={date} />
+          <WeekTabContent events={events} date={date} />
+          <MonthTabContent events={events} date={date} />
         </div>
       </Tabs>
     </div>
