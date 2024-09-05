@@ -22,7 +22,7 @@ export function EventCard({ event }: Props) {
           <div className="flex items-center space-x-2 text-muted-foreground">
             <Clock className="h-4 w-4" />
             <span>
-              {format(parseISO(event.eventDate), 'kk:mm')} -{' '}
+              {format(parseISO(event.eventDate), 'kk:mm') + ' - '}
               {format(parseISO(event.endTime), 'kk:mm')}
             </span>
           </div>
