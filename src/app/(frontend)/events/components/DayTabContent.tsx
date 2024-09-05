@@ -7,15 +7,10 @@ import { useState } from 'react'
 import { TabCardHeader } from './TabCardHeader'
 import { filterEvents } from '@/utilities/filterEvents'
 import { EventCard } from './EventCard'
+import { Events } from '../page'
 
 type Props = {
-  events: {
-    id: number
-    title: string
-    date: string
-    time: string
-    location: string
-  }[]
+  events: Events
   date: Date
 }
 

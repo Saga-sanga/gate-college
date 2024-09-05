@@ -1,14 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CalendarDays, Clock, MapPin } from 'lucide-react'
+import { Events } from '../page'
+import { format, parseISO } from 'date-fns'
 
 type Props = {
-  event: {
-    id: number
-    title: string
-    date: string
-    time: string
-    location: string
-  }
+  event: Events[number]
 }
 
 export function EventCard({ event }: Props) {
@@ -21,11 +17,14 @@ export function EventCard({ event }: Props) {
         <div className="flex flex-row space-x-8 text-sm">
           <div className="flex items-center space-x-2 text-muted-foreground">
             <CalendarDays className="h-4 w-4" />
-            <span>{event.date}</span>
+            <span>{format(parseISO(event.eventDate), 'dd-MM-yyyy')}</span>
           </div>
           <div className="flex items-center space-x-2 text-muted-foreground">
             <Clock className="h-4 w-4" />
-            <span>{event.time}</span>
+            <span>
+              {format(parseISO(event.eventDate), 'kk:mm')} -{' '}
+              {format(parseISO(event.endTime), 'kk:mm')}
+            </span>
           </div>
           <div className="flex items-center space-x-2 text-muted-foreground">
             <MapPin className="h-4 w-4" />

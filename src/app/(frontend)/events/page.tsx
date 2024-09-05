@@ -15,25 +15,30 @@ const events = [
   {
     id: 1,
     title: 'Guest Lecture: AI in Healthcare',
-    date: '2023-05-15',
-    time: '14:00 - 16:00',
-    location: 'Auditorium A',
+    eventDate: '2024-09-11T06:00:00.000Z',
+    endTime: '2024-09-11T06:30:00.000Z',
+    location: 'Auditorium',
+    slug: 'sabbath-school',
   },
   {
     id: 2,
     title: 'Student Council Meeting',
-    date: '2023-05-16',
-    time: '12:30 - 13:30',
-    location: 'Room 101',
+    eventDate: '2024-09-15T08:00:00.000Z',
+    endTime: '2024-09-15T09:30:00.000Z',
+    location: 'Classroom B',
+    slug: 'student-council-meeting',
   },
   {
     id: 3,
     title: 'Career Fair',
-    date: '2023-05-18',
-    time: '10:00 - 17:00',
+    eventDate: '2024-09-22T06:00:00.000Z',
+    endTime: '2024-09-22T06:30:00.000Z',
     location: 'Main Hall',
+    slug: 'career-fair',
   },
 ]
+
+export type Events = typeof events
 
 export default function EventsPage() {
   const today = new Date()

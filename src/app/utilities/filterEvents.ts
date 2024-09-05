@@ -1,11 +1,5 @@
-type Event = {
-  id: number
-  title: string
-  date: string
-  time: string
-  location: string
-}
+import type { Events } from '@/(frontend)/events/page'
 
-export function filterEvents(events: Event[], searchTerm: string) {
+export function filterEvents(events: Events, searchTerm: string) {
   return events.filter((event) => event.title.toLowerCase().includes(searchTerm.toLowerCase()))
 }
