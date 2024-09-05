@@ -33,7 +33,7 @@ export type Events = typeof events
 export default async function EventsPage() {
   return (
     <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold mb-6">Calendar of Events</h1>
+      <h1 className="text-3xl font-bold mb-6 text-primary">Calendar of Events</h1>
       <EventsContainer events={events} />
     </div>
   )

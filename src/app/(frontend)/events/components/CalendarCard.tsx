@@ -16,7 +16,7 @@ export function CalendarCard({ today, date, setDate }: Props) {
     <Card>
       <CardContent className="p-0">
         <div className="flex justify-between items-center p-4 border-b">
-          <span className="text-lg font-semibold">
+          <span className="text-lg font-semibold text-primary">
             {date?.toLocaleString('en-US', { day: 'numeric', month: 'long' })}
           </span>
           <Button
@@ -35,7 +35,7 @@ export function CalendarCard({ today, date, setDate }: Props) {
           onSelect={setDate}
           month={month}
           onMonthChange={setMonth}
-          className="rounded-md"
+          className="rounded-md w-fit mx-auto"
         />
       </CardContent>
     </Card>

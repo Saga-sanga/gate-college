@@ -24,8 +24,12 @@ export function EventsContainer({ events }: Props) {
       <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
         <div className="space-y-6 mt-2">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="day">Day</TabsTrigger>
-            <TabsTrigger value="week">Week</TabsTrigger>
+            <TabsTrigger className="data-[state=active]:text-primary" value="day">
+              Day
+            </TabsTrigger>
+            <TabsTrigger className="data-[state=active]:text-primary" value="week">
+              Week
+            </TabsTrigger>
           </TabsList>
           <CalendarCard date={date} today={today} setDate={setDate} />
         </div>

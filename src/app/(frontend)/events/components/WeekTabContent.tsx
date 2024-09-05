@@ -1,7 +1,6 @@
 'use client'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { TabsContent } from '@/components/ui/tabs'
-import { CalendarDays, Clock, MapPin } from 'lucide-react'
 import { useState } from 'react'
 import { TabCardHeader } from './TabCardHeader'
 import { filterEvents } from '@/utilities/filterEvents'
@@ -62,7 +61,7 @@ export function WeekTabContent({ events, date }: Props) {
 function WeekdayEventsList({ day, events }: { day: string; events: Events }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl">{day}</h2>
+      <h2 className="text-xl text-primary">{day}</h2>
       {events.length ? (
         events.map((event) => <EventCard key={event.id} event={event} />)
       ) : (

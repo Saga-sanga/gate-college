@@ -17,7 +17,7 @@ export function EventCard({ event }: Props) {
         <div className="flex flex-row space-x-8 text-sm">
           <div className="flex items-center space-x-2 text-muted-foreground">
             <CalendarDays className="h-4 w-4" />
-            <span>{format(parseISO(event.eventDate), 'dd-MM-yyyy')}</span>
+            <span>{format(parseISO(event.eventDate), 'MMM do, yyyy')}</span>
           </div>
           <div className="flex items-center space-x-2 text-muted-foreground">
             <Clock className="h-4 w-4" />

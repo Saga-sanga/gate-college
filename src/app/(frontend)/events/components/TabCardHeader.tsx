@@ -25,7 +25,7 @@ export function TabCardHeader({ date, searchTerm, setSearchTerm, mode = 'day' }:
 
   return (
     <CardHeader>
-      <CardTitle>Events</CardTitle>
+      <CardTitle className="text-primary">Events</CardTitle>
       <CardDescription>
         Upcoming events for <b>{dateString}</b>
       </CardDescription>
