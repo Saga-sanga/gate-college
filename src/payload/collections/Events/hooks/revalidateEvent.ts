@@ -1,10 +1,8 @@
-import type { CollectionAfterChangeHook } from 'payload'
-
 import { revalidatePath } from 'next/cache'
+import type { CollectionAfterChangeHook } from 'payload'
+import type { Event } from 'src/payload-types'
 
-import type { Page } from '../../../../payload-types'
-
-export const revalidatePage: CollectionAfterChangeHook<Page> = ({
+export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
   doc,
   previousDoc,
   req: { payload },
@@ -12,7 +10,7 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
   if (doc._status === 'published') {
     const path = doc.slug === 'home' ? '/' : `/${doc.slug}`
 
-    payload.logger.info(`Revalidating page at path: ${path}`)
+    payload.logger.info(`Revalidating event at path: ${path}`)
     revalidatePath(path)
   }
 
@@ -20,10 +18,9 @@ export const revalidatePage: CollectionAfterChangeHook<Page> = ({
   if (previousDoc?._status === 'published' && doc._status !== 'published') {
     const oldPath = previousDoc.slug === 'home' ? '/' : `/${previousDoc.slug}`
 
-    payload.logger.info(`Revalidating old page at path: ${oldPath}`)
+    payload.logger.info(`Revalidating old event at path: ${oldPath}`)
 
     revalidatePath(oldPath)
   }
-
   return doc
 }

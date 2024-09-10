@@ -2,7 +2,7 @@ import { endOfDay, endOfWeek, getDate, getMonth, getYear, startOfDay, startOfWee
 import { EventsContainer } from './components/EventsContainer'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
-import util from 'util'
+// import util from 'util'
 import { Suspense } from 'react'
 import { EventsSkeletion } from './components/EventsSkeletion'
 
@@ -47,7 +47,8 @@ export default async function EventsPage({
     },
   })
 
-  console.log(util.inspect(events, { depth: null, colors: true }))
+  // console.log(util.inspect(events, { depth: null, colors: true }))
+
   return (
     <div className="container mx-auto py-6">
       <h1 className="text-3xl font-bold mb-6 text-primary">Calendar of Events</h1>

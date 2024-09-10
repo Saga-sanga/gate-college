@@ -25,6 +25,8 @@ import {
 } from '@payloadcms/richtext-lexical'
 
 import type { CollectionConfig } from 'payload'
+import { populatePublishedAt } from '@/payload/hooks/populatePublishedAt'
+import { revalidateEvent } from './hooks/revalidateEvent'
 
 export const Events: CollectionConfig = {
   slug: 'events',
@@ -67,8 +69,8 @@ export const Events: CollectionConfig = {
                 features: ({ rootFeatures }) => {
                   return [
                     ...rootFeatures,
-                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
+                    HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
+                    BlocksFeature({ blocks: [Banner, MediaBlock] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
@@ -164,6 +166,14 @@ export const Events: CollectionConfig = {
     ...slugField(),
   ],
   hooks: {
-    afterChange: [],
+    afterChange: [revalidateEvent],
+  },
+  versions: {
+    drafts: {
+      autosave: {
+        interval: 100,
+      },
+    },
+    maxPerDoc: 50,
   },
 }
