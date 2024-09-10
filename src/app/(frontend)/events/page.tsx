@@ -3,6 +3,9 @@ import { EventsContainer } from './components/EventsContainer'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
 import util from 'util'
+import { Suspense } from 'react'
+import { Skeleton } from '@/components/ui/skeleton'
+import { EventsSkeletion } from './components/EventsSkeletion'
 
 // Mock data for events
 const events = [
@@ -44,12 +47,10 @@ export default async function EventsPage({
     mode?: string
   }
 }) {
-  console.log(searchParams)
   const day = searchParams?.day ?? getDate(Date.now())
   const month = searchParams?.month ?? getMonth(Date.now()) + 1
   const year = searchParams?.year ?? getYear(Date.now())
   const mode = searchParams.mode ?? 'day'
-  // console.log({ day, month, year, mode })
 
   const currentDate = new Date(`${year}-${month}-${day}`).toISOString()
   const startTime =
@@ -57,10 +58,8 @@ export default async function EventsPage({
   const endTime =
     mode === 'week' ? endOfWeek(currentDate).toISOString() : endOfDay(currentDate).toISOString()
 
-  console.log({ currentDate, startTime, endTime })
-
   const payload = await getPayloadHMR({ config: configPromise })
-  const payloadEvents = await payload.find({
+  const events = await payload.find({
     collection: 'events',
     depth: 1,
     where: {
@@ -79,11 +78,13 @@ export default async function EventsPage({
     },
   })
 
-  console.log(util.inspect(payloadEvents, { depth: null, colors: true }))
+  console.log(util.inspect(events, { depth: null, colors: true }))
   return (
     <div className="container mx-auto py-6">
       <h1 className="text-3xl font-bold mb-6 text-primary">Calendar of Events</h1>
-      <EventsContainer events={events} />
+      <Suspense key={currentDate} fallback={<EventsSkeletion />}>
+        <EventsContainer events={events.docs} selectedDate={currentDate} mode={mode} />
+      </Suspense>
     </div>
   )
 }

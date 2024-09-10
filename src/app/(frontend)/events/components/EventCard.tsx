@@ -1,10 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CalendarDays, Clock, MapPin } from 'lucide-react'
-import { Events } from '../page'
 import { format, parseISO } from 'date-fns'
+import type { Event } from 'src/payload-types'
 
 type Props = {
-  event: Events[number]
+  event: Event
 }
 
 export function EventCard({ event }: Props) {

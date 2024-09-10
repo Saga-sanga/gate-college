@@ -1,5 +1,5 @@
-import type { Events } from '@/(frontend)/events/page'
+import type { Event } from 'src/payload-types'
 
-export function filterEvents(events: Events, searchTerm: string) {
+export function filterEvents(events: Event[], searchTerm: string) {
   return events.filter((event) => event.title.toLowerCase().includes(searchTerm.toLowerCase()))
 }

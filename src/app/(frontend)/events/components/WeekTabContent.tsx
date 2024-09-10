@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { TabCardHeader } from './TabCardHeader'
 import { filterEvents } from '@/utilities/filterEvents'
 import { EventCard } from './EventCard'
-import { Events } from '../page'
+import type { Event } from 'src/payload-types'
 import {
   isFriday,
   isMonday,
@@ -17,7 +17,7 @@ import {
 } from 'date-fns'
 
 type Props = {
-  events: Events
+  events: Event[]
   date: Date
 }
 
@@ -58,7 +58,7 @@ export function WeekTabContent({ events, date }: Props) {
   )
 }
 
-function WeekdayEventsList({ day, events }: { day: string; events: Events }) {
+function WeekdayEventsList({ day, events }: { day: string; events: Event[] }) {
   return (
     <section className="space-y-4">
       <h2 className="text-xl text-primary">{day}</h2>
