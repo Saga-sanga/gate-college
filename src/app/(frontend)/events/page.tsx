@@ -1,4 +1,4 @@
-import { endOfDay, getDate, getMonth, getYear, startOfDay } from 'date-fns'
+import { endOfDay, endOfWeek, getDate, getMonth, getYear, startOfDay, startOfWeek } from 'date-fns'
 import { EventsContainer } from './components/EventsContainer'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
@@ -38,20 +38,26 @@ export default async function EventsPage({
   searchParams,
 }: {
   searchParams: {
-    [key: string]: string | string[] | undefined
+    day?: string
+    month?: string
+    year?: string
+    mode?: string
   }
 }) {
   console.log(searchParams)
   const day = searchParams?.day ?? getDate(Date.now())
   const month = searchParams?.month ?? getMonth(Date.now()) + 1
   const year = searchParams?.year ?? getYear(Date.now())
-  console.log({ day, month, year })
+  const mode = searchParams.mode ?? 'day'
+  // console.log({ day, month, year, mode })
 
   const currentDate = new Date(`${year}-${month}-${day}`).toISOString()
-  const startTime = startOfDay(currentDate).toISOString()
-  const endTime = endOfDay(currentDate).toISOString()
+  const startTime =
+    mode === 'week' ? startOfWeek(currentDate).toISOString() : startOfDay(currentDate).toISOString()
+  const endTime =
+    mode === 'week' ? endOfWeek(currentDate).toISOString() : endOfDay(currentDate).toISOString()
 
-  // console.log({ currentDate, startTime, endTime })
+  console.log({ currentDate, startTime, endTime })
 
   const payload = await getPayloadHMR({ config: configPromise })
   const payloadEvents = await payload.find({
