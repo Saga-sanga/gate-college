@@ -15,6 +15,7 @@ import {
   isTuesday,
   isWednesday,
 } from 'date-fns'
+import { EmptyEventsBox } from './EmptyEventsBox'
 
 type Props = {
   events: Event[]
@@ -65,9 +66,7 @@ function WeekdayEventsList({ day, events }: { day: string; events: Event[] }) {
       {events.length ? (
         events.map((event) => <EventCard key={event.id} event={event} />)
       ) : (
-        <p className="text-sm w-full text-center text-muted-foreground p-6 border border-dashed">
-          No events
-        </p>
+        <EmptyEventsBox />
       )}
     </section>
   )

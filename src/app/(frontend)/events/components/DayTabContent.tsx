@@ -8,6 +8,7 @@ import { TabCardHeader } from './TabCardHeader'
 import { filterEvents } from '@/utilities/filterEvents'
 import { EventCard } from './EventCard'
 import type { Event } from 'src/payload-types'
+import { EmptyEventsBox } from './EmptyEventsBox'
 
 type Props = {
   events: Event[]
@@ -25,9 +26,11 @@ export function DayTabContent({ events, date }: Props) {
         <TabCardHeader date={date} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <CardContent>
           <div className="space-y-4">
-            {filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
+            {filteredEvents.length ? (
+              filteredEvents.map((event) => <EventCard key={event.id} event={event} />)
+            ) : (
+              <EmptyEventsBox />
+            )}
           </div>
         </CardContent>
       </Card>
