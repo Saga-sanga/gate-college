@@ -6,6 +6,19 @@ import { PayloadRedirects } from '@/components/PayloadRedirects'
 import { PostHero } from '@/heros/PostHero'
 import RichText from '@/components/RichText'
 
+export const dynamicParams = true
+
+export async function generateStaticParams() {
+  const payload = await getPayloadHMR({ config: configPromise })
+  const events = await payload.find({
+    collection: 'events',
+    limit: 1000,
+    overrideAccess: false,
+  })
+
+  return events.docs.map(({ slug }) => slug)
+}
+
 export default async function Event({ params: { slug = '' } }) {
   const url = '/events' + slug
   const event = await queryEventBySlug({ slug })

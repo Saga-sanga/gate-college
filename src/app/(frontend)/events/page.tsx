@@ -4,38 +4,7 @@ import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
 import util from 'util'
 import { Suspense } from 'react'
-import { Skeleton } from '@/components/ui/skeleton'
 import { EventsSkeletion } from './components/EventsSkeletion'
-
-// Mock data for events
-const events = [
-  {
-    id: 1,
-    title: 'Guest Lecture: AI in Healthcare',
-    eventDate: '2024-09-11T06:00:00.000Z',
-    endTime: '2024-09-11T06:30:00.000Z',
-    location: 'Auditorium',
-    slug: 'sabbath-school',
-  },
-  {
-    id: 2,
-    title: 'Student Council Meeting',
-    eventDate: '2024-09-15T08:00:00.000Z',
-    endTime: '2024-09-15T09:30:00.000Z',
-    location: 'Classroom B',
-    slug: 'student-council-meeting',
-  },
-  {
-    id: 3,
-    title: 'Career Fair',
-    eventDate: '2024-09-22T06:00:00.000Z',
-    endTime: '2024-09-22T06:30:00.000Z',
-    location: 'Main Hall',
-    slug: 'career-fair',
-  },
-]
-
-export type Events = typeof events
 
 export default async function EventsPage({
   searchParams,
