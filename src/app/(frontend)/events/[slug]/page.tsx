@@ -26,8 +26,6 @@ export default async function Event({ params: { slug = '' } }) {
   const url = '/events' + slug
   const event = await queryEventBySlug({ slug })
 
-  console.log({ event })
-
   if (!event) return <PayloadRedirects url={url} />
 
   return (
@@ -58,7 +56,7 @@ export default async function Event({ params: { slug = '' } }) {
         </div>
         <div className="lg:grid lg:grid-cols-[1fr_48rem_1fr] grid-rows-[1fr]">
           <RichText
-            className="lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[1fr]"
+            className="lg:grid lg:grid-cols-subgrid h-fit col-start-1 col-span-3 grid-rows-[1fr]"
             content={event.content}
             enableGutter={false}
           />
