@@ -3,12 +3,11 @@ import config from '@payload-config'
 import { CollectionArchive } from './CollectionArchive'
 import Link from 'next/link'
 import { cn } from '@/utilities/cn'
-import { buttonVariants } from './ui/button'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
 
-export async function NewsList() {
+export async function NewsSection() {
   const payload = await getPayloadHMR({ config })
 
   const posts = await payload.find({
