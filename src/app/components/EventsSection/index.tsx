@@ -1,7 +1,6 @@
 import { cn } from '@/utilities/cn'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
-import util from 'util'
 import Link from 'next/link'
 import { startOfToday } from 'date-fns'
 import type { Event } from 'src/payload-types'
@@ -45,8 +44,6 @@ export async function EventsSection() {
   const selectedGroups = Object.entries(groupedEvents)
     .map((entry) => ({ date: entry[0], events: entry[1] }))
     .slice(0, 4)
-
-  console.log(util.inspect(selectedGroups, { depth: null, colors: true }))
 
   return (
     <section className="py-20 bg-muted space-y-10">
