@@ -33,6 +33,7 @@ import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Page, Post } from 'src/payload-types'
 import { Hero } from './payload/globals/Hero/Hero'
 import { Events } from './payload/collections/Events'
+import { admin } from './payload/access/admin'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -123,7 +124,7 @@ export default buildConfig({
       // authToken: process.env.TURSO_AUTH_TOKEN,
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Events],
+  collections: [Pages, Posts, Events, Media, Categories, Users],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [
@@ -135,11 +136,16 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [Header, Footer, Hero],
+  globals: [Hero, Header, Footer],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],
       overrides: {
+        access: {
+          read: admin,
+          create: admin,
+          update: admin,
+        },
         // @ts-expect-error
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
@@ -171,6 +177,11 @@ export default buildConfig({
         payment: false,
       },
       formOverrides: {
+        access: {
+          create: admin,
+          read: admin,
+          update: admin,
+        },
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
             if ('name' in field && field.name === 'confirmationMessage') {
@@ -189,6 +200,11 @@ export default buildConfig({
             }
             return field
           })
+        },
+      },
+      formSubmissionOverrides: {
+        access: {
+          read: admin,
         },
       },
     }),

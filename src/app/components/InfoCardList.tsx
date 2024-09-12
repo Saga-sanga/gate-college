@@ -1,7 +1,5 @@
 import { infoCardConfig } from '@/config/landing'
-import { buttonVariants } from './ui/button'
 import Link from 'next/link'
-import { cn } from '@/utilities/cn'
 import { InfoCardConfig } from '@/config/types'
 
 type Props = {

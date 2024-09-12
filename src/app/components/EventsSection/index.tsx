@@ -44,6 +44,7 @@ export async function EventsSection() {
   const selectedGroups = Object.entries(groupedEvents)
     .map((entry) => ({ date: entry[0], events: entry[1] }))
     .slice(0, 4)
+    .reverse()
 
   return (
     <section className="py-20 bg-muted space-y-10">

@@ -6,14 +6,14 @@ export const infoCardConfig: InfoCardConfig[] = [
     description:
       "Choose from over 150 programs and degrees. At GATE, you can change your major, but you won't have to change your school!",
     label: 'View our Programs',
-    href: '/',
+    href: '/programs',
   },
   {
     title: 'What will it cost?',
     description:
       'You can afford a top-tier private education. Find out how tuition and financial aid work, including the Net Price Calculator',
-    label: 'Check your fees',
-    href: '/',
+    label: 'Check our fees',
+    href: '/tution-fees',
   },
   {
     title: 'How can I apply?',

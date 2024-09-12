@@ -1,17 +1,17 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticated } from '../../access/authenticated'
 import { protectRoles } from 'src/payload/hooks/protectRoles'
 import { checkRole } from 'src/payload/access/checkRole'
+import { admin } from '@/payload/access/admin'
 
 const Users: CollectionConfig = {
   slug: 'users',
   access: {
-    admin: ({ req: { user } }) => checkRole(['admin'], user),
-    create: authenticated,
-    delete: authenticated,
-    read: authenticated,
-    update: authenticated,
+    admin: ({ req: { user } }) => checkRole(['admin', 'manager'], user),
+    create: admin,
+    delete: admin,
+    read: admin,
+    update: admin,
   },
   admin: {
     defaultColumns: ['name', 'email'],
@@ -37,6 +37,10 @@ const Users: CollectionConfig = {
         {
           label: 'Admin',
           value: 'admin',
+        },
+        {
+          label: 'Manager',
+          value: 'manager',
         },
         {
           label: 'User',
