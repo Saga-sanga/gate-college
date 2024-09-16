@@ -28,6 +28,7 @@ export interface Config {
   };
   globals: {
     'hero-main': HeroMain;
+    'highlight-section': HighlightSection;
     header: Header;
     footer: Footer;
   };
@@ -673,6 +674,18 @@ export interface HeroMain {
       | null;
     media?: (number | null) | Media;
   };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "highlight-section".
+ */
+export interface HighlightSection {
+  id: number;
+  title: string;
+  description: string;
+  'youtube-link': string;
   updatedAt?: string | null;
   createdAt?: string | null;
 }

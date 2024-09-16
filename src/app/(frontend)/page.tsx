@@ -4,6 +4,7 @@ import { MainHero } from '@/components/MainHero'
 import { InfoCardList } from '@/components/InfoCardList'
 import { NewsSection } from '@/components/NewsSection'
 import { EventsSection } from '@/components/EventsSection'
+import { HighlightSection } from '@/components/HighlightSection'
 
 export default async function Page() {
   return (
@@ -11,6 +12,7 @@ export default async function Page() {
       <MainHero />
       <InfoCardList />
       <NewsSection />
+      <HighlightSection />
       <EventsSection />
     </Fragment>
   )

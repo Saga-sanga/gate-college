@@ -34,6 +34,7 @@ import { Page, Post } from 'src/payload-types'
 import { Hero } from './payload/globals/Hero/Hero'
 import { Events } from './payload/collections/Events'
 import { admin } from './payload/access/admin'
+import { HighlightSection } from './payload/globals/HighlightSection/HighlightSection'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -136,7 +137,7 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [Hero, Header, Footer],
+  globals: [Hero, HighlightSection, Header, Footer],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],
