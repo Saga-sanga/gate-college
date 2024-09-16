@@ -1,5 +1,5 @@
-import { getPayloadHMR } from '@payloadcms/next/utilities'
-import config from '@payload-config'
+import { getCachedGlobal } from '@/utilities/getGlobals'
+import type { HighlightSection } from 'src/payload-types'
 
 function convertEmbedURL(url: string): string {
   const videoCode = url.split('=')[1]
@@ -7,12 +7,7 @@ function convertEmbedURL(url: string): string {
 }
 
 export async function HighlightSection() {
-  const payload = await getPayloadHMR({ config })
-
-  const highlight = await payload.findGlobal({
-    slug: 'highlight-section',
-    depth: 1,
-  })
+  const highlight = (await getCachedGlobal('highlight-section', 1)()) as HighlightSection
 
   console.log({ highlight })
 
@@ -23,7 +18,7 @@ export async function HighlightSection() {
 
   return (
     <section className="py-20 space-y-10 background-radial-primary">
-      <article className="container text-white space-y-12">
+      <article className="container text-white space-y-14">
         <h2 className="font-serif text-5xl capitalize">{highlight.title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {highlight['youtube-link'] && (

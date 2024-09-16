@@ -1,6 +1,7 @@
 import { admin } from '@/payload/access/admin'
 import { authenticated } from '@/payload/access/authenticated'
 import { GlobalConfig } from 'payload'
+import { revalidateHighlight } from './hooks/revalidateHighlight'
 
 export const HighlightSection: GlobalConfig = {
   slug: 'highlight-section',
@@ -25,4 +26,7 @@ export const HighlightSection: GlobalConfig = {
       required: true,
     },
   ],
+  hooks: {
+    afterChange: [revalidateHighlight],
+  },
 }
