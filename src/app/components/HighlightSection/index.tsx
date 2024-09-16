@@ -26,9 +26,6 @@ export async function HighlightSection() {
       <article className="container text-white space-y-12">
         <h2 className="font-serif text-5xl capitalize">{highlight.title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-          <div className="h-full pt-4 pe-12">
-            <p className="text-2xl font-light">{highlight.description}</p>
-          </div>
           {highlight['youtube-link'] && (
             <iframe
               width="560"
@@ -38,6 +35,9 @@ export async function HighlightSection() {
               allowFullScreen
             ></iframe>
           )}
+          <div className="h-full pt-4 pe-12">
+            <p className="text-2xl font-light">{highlight.description}</p>
+          </div>
         </div>
       </article>
     </section>
