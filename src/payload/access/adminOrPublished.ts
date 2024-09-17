@@ -6,6 +6,10 @@ export const adminOrPublished: Access = ({ req: { user } }) => {
     return true
   }
 
+  if (checkRole(['manager'], user)) {
+    return false
+  }
+
   return {
     _status: {
       equals: 'published',

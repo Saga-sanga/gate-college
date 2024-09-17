@@ -9,8 +9,6 @@ function convertEmbedURL(url: string): string {
 export async function HighlightSection() {
   const highlight = (await getCachedGlobal('highlight-section', 1)()) as HighlightSection
 
-  console.log({ highlight })
-
   // return nothing if highlight is empty
   if (Object.keys(highlight).length === 0) {
     return null

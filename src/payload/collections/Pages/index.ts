@@ -19,13 +19,14 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { admin } from '@/payload/access/admin'
+import { adminOrPublished } from '@/payload/access/adminOrPublished'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
   access: {
     create: admin,
     delete: admin,
-    read: admin,
+    read: adminOrPublished,
     update: admin,
   },
   admin: {
