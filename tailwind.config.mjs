@@ -81,11 +81,13 @@ module.exports = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+          muted: 'hsl(var(--primary-muted))',
         },
         ring: 'hsl(var(--ring))',
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
+          muted: 'hsl(var(--secondary-muted))',
         },
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',

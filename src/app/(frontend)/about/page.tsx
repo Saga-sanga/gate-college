@@ -1,4 +1,3 @@
-import { Hero } from '@/components/Hero'
 import { MainHero } from '@/components/MainHero'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import RichText from '@/components/RichText'

@@ -13,7 +13,7 @@ import {
 import { GlobalConfig } from 'payload'
 import { revalidateStudentsLife } from './hooks/revalidateStudentsLife'
 
-export const StudentsLife: GlobalConfig = {
+export const StudentLife: GlobalConfig = {
   slug: 'students-life',
   access: {
     update: authenticated,

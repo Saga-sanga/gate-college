@@ -25,7 +25,7 @@ export async function NewsSection() {
     <section className="py-20 space-y-10">
       <div className="container">
         <h3 className="font-serif text-5xl text-primary">{'News & Announcements'}</h3>
-        <hr className="mt-5" />
+        <hr className="mt-5 border-secondary" />
       </div>
       <CollectionArchive posts={posts.docs} />
       <div className="container text-center">

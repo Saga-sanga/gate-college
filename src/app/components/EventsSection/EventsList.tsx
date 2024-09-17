@@ -31,7 +31,7 @@ export function EventsList({ groupedEvents }: Props) {
 function EventGroupCard({ group }: { group: GroupedEvent }) {
   return (
     <article className="space-y-6">
-      <h3 className="text-xl font-medium">{format(group.date, 'MMMM dd')}</h3>
+      <h3 className="text-xl text-secondary font-medium">{format(group.date, 'MMMM dd')}</h3>
       <div className="space-y-4">
         {group.events.map((event) => (
           <EventHomeCard key={event.id} event={event} />

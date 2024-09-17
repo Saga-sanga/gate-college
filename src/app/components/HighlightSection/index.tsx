@@ -17,7 +17,10 @@ export async function HighlightSection() {
   return (
     <section className="py-20 space-y-10 background-radial-primary">
       <article className="container text-white space-y-14">
-        <h2 className="font-serif text-5xl capitalize">{highlight.title}</h2>
+        <div>
+          <h2 className="font-serif text-5xl capitalize">{highlight.title}</h2>
+          <hr className="w-[15%] border-t-4 mt-1 border-secondary" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {highlight['youtube-link'] && (
             <iframe
