@@ -36,6 +36,7 @@ import { Events } from './payload/collections/Events'
 import { admin } from './payload/access/admin'
 import { HighlightSection } from './payload/globals/HighlightSection/HighlightSection'
 import { About } from './payload/globals/About/About'
+import { StudentsLife } from './payload/globals/StudentsLife/StudentsLife'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -138,7 +139,7 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [Hero, HighlightSection, Header, Footer, About],
+  globals: [Hero, HighlightSection, Header, Footer, About, StudentsLife],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],
