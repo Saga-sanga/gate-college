@@ -64,7 +64,6 @@ export interface Page {
   id: number;
   title: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
     richText?: {
       root: {
         type: string;
@@ -96,7 +95,7 @@ export interface Page {
           id?: string | null;
         }[]
       | null;
-    media?: (number | null) | Media;
+    media: number | Media;
   };
   layout: (
     | {
@@ -641,7 +640,6 @@ export interface PayloadMigration {
 export interface HeroMain {
   id: number;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
     richText?: {
       root: {
         type: string;
@@ -673,7 +671,7 @@ export interface HeroMain {
           id?: string | null;
         }[]
       | null;
-    media?: (number | null) | Media;
+    media: number | Media;
   };
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -746,7 +744,6 @@ export interface Footer {
 export interface About {
   id: number;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
     richText?: {
       root: {
         type: string;
@@ -778,7 +775,7 @@ export interface About {
           id?: string | null;
         }[]
       | null;
-    media?: (number | null) | Media;
+    media: number | Media;
   };
   content?:
     | {

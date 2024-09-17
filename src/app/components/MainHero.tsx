@@ -1,20 +1,19 @@
 import { Fragment } from 'react'
 import RichText from './RichText'
 import { Media } from './Media'
-import { getCachedGlobal } from '@/utilities/getGlobals'
 import { HeroMain } from 'src/payload-types'
 import { CMSLink } from './Link'
 
-export async function MainHero() {
-  const {
-    hero: { richText, links, media },
-  } = (await getCachedGlobal('hero-main', 1)()) as HeroMain
+type Props = {
+  hero: HeroMain['hero']
+}
 
+export async function MainHero({ hero: { richText, links, media } }: Props) {
   return (
     <section className="text-white relative flex font-serif items-end">
       <div className="container mb-10 z-10">
         <div className="max-w-[34rem]">
-          <RichText className="mb-6" content={richText} enableGutter={false} />
+          <RichText className="mb-6 prose-p:text-xl" content={richText} enableGutter={false} />
           {Array.isArray(links) && links.length > 0 && (
             <ul className="flex gap-4">
               {links.map(({ link }, i) => {
