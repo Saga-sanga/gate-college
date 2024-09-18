@@ -7,11 +7,15 @@ import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import {
+  BlockquoteFeature,
   BoldFeature,
+  EXPERIMENTAL_TableFeature as TableFeature,
   FixedToolbarFeature,
   HeadingFeature,
   ItalicFeature,
   LinkFeature,
+  OrderedListFeature,
+  UnorderedListFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import sharp from 'sharp' // editor-import
@@ -95,6 +99,10 @@ export default buildConfig({
         UnderlineFeature(),
         BoldFeature(),
         ItalicFeature(),
+        UnorderedListFeature(),
+        OrderedListFeature(),
+        TableFeature(),
+        BlockquoteFeature(),
         LinkFeature({
           enabledCollections: ['pages', 'posts'],
           fields: ({ defaultFields }) => {

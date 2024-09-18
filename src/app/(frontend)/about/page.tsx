@@ -1,20 +1,13 @@
 import { MainHero } from '@/components/MainHero'
-import { PayloadRedirects } from '@/components/PayloadRedirects'
 import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import { About } from 'src/payload-types'
 
 export default async function AboutPage() {
-  const url = '/about'
-
   const { hero, content } = (await getCachedGlobal('about', 1)()) as About
 
-  if (!content) {
-    ;<PayloadRedirects url={url} />
-  }
-
   return (
-    <main className="">
+    <main>
       <MainHero hero={hero} />
       <article className="space-y-12">
         {content.length > 0 &&
