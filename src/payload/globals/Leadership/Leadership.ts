@@ -1,15 +1,5 @@
 import { authenticated } from '@/payload/access/authenticated'
 import { authenticatedOrPublished } from '@/payload/access/authenticatedOrPublished'
-import { Banner } from '@/payload/blocks/Banner'
-import { MediaBlock } from '@/payload/blocks/MediaBlock'
-import { hero } from '@/payload/fields/hero'
-import {
-  BlocksFeature,
-  FixedToolbarFeature,
-  HeadingFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
 import { GlobalConfig } from 'payload'
 import { revalidateGlobal } from '@/payload/hooks/revalidateGlobal'
 
@@ -23,10 +13,6 @@ export const Leadership: GlobalConfig = {
     {
       type: 'tabs',
       tabs: [
-        {
-          fields: [hero],
-          label: 'Hero',
-        },
         {
           label: 'Content',
           fields: [
