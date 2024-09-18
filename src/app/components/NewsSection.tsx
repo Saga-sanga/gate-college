@@ -27,7 +27,15 @@ export async function NewsSection() {
         <h3 className="font-serif text-5xl text-primary">{'News & Announcements'}</h3>
         <hr className="mt-5 border-secondary" />
       </div>
-      <CollectionArchive posts={posts.docs} />
+      {posts.docs.length > 0 ? (
+        <CollectionArchive posts={posts.docs} />
+      ) : (
+        <div className="container">
+          <p className="text-center text-muted-foreground col-span-4 py-16 border border-dashed">
+            There are no news or announcements to display
+          </p>
+        </div>
+      )}
       <div className="container text-center">
         <Link href="/posts" className={cn('capitalize fancy-button')}>
           See More News

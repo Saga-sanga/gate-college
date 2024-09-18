@@ -14,9 +14,11 @@ export default async function AboutPage() {
           content.map((item, i) => (
             <RichText className="prose-xl prose-h2:text-primary" key={i} content={item.richText} />
           ))}
-        <div className="bg-muted pt-14 pb-28 space-y-12">
-          <h2 className="text-center font-bold text-4xl text-primary capitalize">Where We Are</h2>
-          <GoogleMapEmbed />
+        <div className="bg-muted pt-14 pb-28 ">
+          <div className="container space-y-12">
+            <h2 className="text-center font-bold text-4xl text-primary capitalize">Where We Are</h2>
+            <GoogleMapEmbed />
+          </div>
         </div>
       </article>
     </main>
@@ -27,7 +29,7 @@ function GoogleMapEmbed() {
   const src =
     'https://www.google.com/maps/embed/v1/place?q=Gate+Training+Center,+Falakata,+Parangarpar,+West+Bengal+735211&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8'
   return (
-    <div className="container px-24 w-full h-[500px] max-w-full">
+    <div className="w-full h-[500px] max-w-full">
       <iframe
         title="Google Maps"
         width="100%"

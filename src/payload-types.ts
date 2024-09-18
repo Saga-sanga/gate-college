@@ -15,6 +15,7 @@ export interface Config {
     posts: Post;
     events: Event;
     media: Media;
+    images: Image;
     categories: Category;
     users: User;
     redirects: Redirect;
@@ -565,6 +566,40 @@ export interface Event {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "images".
+ */
+export interface Image {
+  id: number;
+  alt: string;
+  caption?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1004,7 +1039,7 @@ export interface Leadership {
   highlight: {
     name: string;
     description: string;
-    image?: (number | null) | Media;
+    image?: (number | null) | Image;
   };
   content?:
     | {
@@ -1013,7 +1048,7 @@ export interface Leadership {
           | {
               name?: string | null;
               descripton?: string | null;
-              image?: (number | null) | Media;
+              image?: (number | null) | Image;
               id?: string | null;
             }[]
           | null;

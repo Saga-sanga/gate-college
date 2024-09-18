@@ -44,6 +44,7 @@ import { StudentLife } from './payload/globals/StudentLife/StudentLife'
 import { TutionFees } from './payload/globals/TutionFees/TutionFees'
 import { Programs } from './payload/globals/Programs/Programs'
 import { Leadership } from './payload/globals/Leadership/Leadership'
+import { Images } from './payload/collections/Images'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -138,7 +139,7 @@ export default buildConfig({
       // authToken: process.env.TURSO_AUTH_TOKEN,
     },
   }),
-  collections: [Pages, Posts, Events, Media, Categories, Users],
+  collections: [Pages, Posts, Events, Media, Images, Categories, Users],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [

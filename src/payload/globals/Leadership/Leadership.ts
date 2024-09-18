@@ -11,71 +11,61 @@ export const Leadership: GlobalConfig = {
   },
   fields: [
     {
-      type: 'tabs',
-      tabs: [
+      name: 'title',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'description',
+      type: 'textarea',
+      required: true,
+    },
+    {
+      name: 'highlight',
+      label: 'Highlight Header',
+      type: 'group',
+      fields: [
         {
-          label: 'Content',
+          name: 'name',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'description',
+          type: 'textarea',
+          required: true,
+        },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'images',
+        },
+      ],
+    },
+    {
+      name: 'content',
+      type: 'array',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+        },
+        {
+          name: 'item',
+          type: 'array',
           fields: [
             {
-              name: 'title',
+              name: 'name',
               type: 'text',
-              required: true,
             },
             {
-              name: 'description',
+              name: 'descripton',
               type: 'textarea',
-              required: true,
             },
             {
-              name: 'highlight',
-              label: 'Highlight Header',
-              type: 'group',
-              fields: [
-                {
-                  name: 'name',
-                  type: 'text',
-                  required: true,
-                },
-                {
-                  name: 'description',
-                  type: 'textarea',
-                  required: true,
-                },
-                {
-                  name: 'image',
-                  type: 'upload',
-                  relationTo: 'media',
-                },
-              ],
-            },
-            {
-              name: 'content',
-              type: 'array',
-              fields: [
-                {
-                  name: 'heading',
-                  type: 'text',
-                },
-                {
-                  name: 'item',
-                  type: 'array',
-                  fields: [
-                    {
-                      name: 'name',
-                      type: 'text',
-                    },
-                    {
-                      name: 'descripton',
-                      type: 'textarea',
-                    },
-                    {
-                      name: 'image',
-                      type: 'upload',
-                      relationTo: 'media',
-                    },
-                  ],
-                },
-              ],
+              name: 'image',
+              type: 'upload',
+              relationTo: 'images',
             },
           ],
         },

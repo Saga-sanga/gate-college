@@ -10,6 +10,7 @@ import { HeroMain } from 'src/payload-types'
 
 export default async function Page() {
   const { hero } = (await getCachedGlobal('hero-main', 1)()) as HeroMain
+
   return (
     <Fragment>
       <MainHero hero={hero} />
