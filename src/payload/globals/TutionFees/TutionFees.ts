@@ -11,7 +11,7 @@ import {
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import { GlobalConfig } from 'payload'
-import { revalidateTutionFees } from './hooks/revalidateTutionFees'
+import { revalidateGlobal } from '@/payload/hooks/revalidateGlobal'
 
 export const TutionFees: GlobalConfig = {
   slug: 'tution-fees',
@@ -58,6 +58,6 @@ export const TutionFees: GlobalConfig = {
     },
   ],
   hooks: {
-    afterChange: [revalidateTutionFees],
+    afterChange: [revalidateGlobal('tution-fees')],
   },
 }

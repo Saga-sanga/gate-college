@@ -32,7 +32,7 @@ export interface Config {
     header: Header;
     footer: Footer;
     about: About;
-    'students-life': StudentsLife;
+    'student-life': StudentLife;
     'tution-fees': TutionFee;
     programs: Program;
     leadership: Leadership;
@@ -806,9 +806,9 @@ export interface About {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "students-life".
+ * via the `definition` "student-life".
  */
-export interface StudentsLife {
+export interface StudentLife {
   id: number;
   hero: {
     richText?: {

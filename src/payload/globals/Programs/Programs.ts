@@ -11,7 +11,7 @@ import {
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import { GlobalConfig } from 'payload'
-import { revalidatePrograms } from './hooks/revalidatePrograms'
+import { revalidateGlobal } from '@/payload/hooks/revalidateGlobal'
 
 export const Programs: GlobalConfig = {
   slug: 'programs',
@@ -58,6 +58,6 @@ export const Programs: GlobalConfig = {
     },
   ],
   hooks: {
-    afterChange: [revalidatePrograms],
+    afterChange: [revalidateGlobal('programs')],
   },
 }

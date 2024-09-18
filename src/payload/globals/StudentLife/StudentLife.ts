@@ -11,10 +11,10 @@ import {
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import { GlobalConfig } from 'payload'
-import { revalidateStudentsLife } from './hooks/revalidateStudentsLife'
+import { revalidateGlobal } from '@/payload/hooks/revalidateGlobal'
 
 export const StudentLife: GlobalConfig = {
-  slug: 'students-life',
+  slug: 'student-life',
   access: {
     update: authenticated,
     read: authenticatedOrPublished,
@@ -58,6 +58,6 @@ export const StudentLife: GlobalConfig = {
     },
   ],
   hooks: {
-    afterChange: [revalidateStudentsLife],
+    afterChange: [revalidateGlobal('student-life')],
   },
 }
