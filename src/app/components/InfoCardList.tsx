@@ -12,7 +12,7 @@ function InfoCard({ info }: Props) {
     <article className="flex flex-col bg-background space-y-8 justify-between rounded p-10 shadow-lg">
       <div className="space-y-6">
         <h2 className="font-serif text-3xl text-secondary">{title}</h2>
-        <p className="text-muted-foreground">{description}</p>
+        <p className="text-primary">{description}</p>
       </div>
       <Link href={href} className="fancy-button capitalize text-center">
         {label}

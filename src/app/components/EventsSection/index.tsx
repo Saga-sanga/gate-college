@@ -50,7 +50,7 @@ export async function EventsSection() {
     <section className="py-20 bg-muted space-y-10">
       <div className="container">
         <h3 className="font-serif text-5xl text-primary">Upcoming Events</h3>
-        <hr className="mt-5" />
+        <hr className="mt-5 border-secondary-muted" />
       </div>
       <EventsList groupedEvents={selectedGroups} />
       <div className="container text-center">
