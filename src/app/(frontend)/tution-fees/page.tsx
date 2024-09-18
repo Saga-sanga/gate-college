@@ -4,8 +4,8 @@ import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import { StudentsLife } from 'src/payload-types'
 
-export default async function StudentLifePage() {
-  const { hero, content } = (await getCachedGlobal('students-life')()) as StudentsLife
+export default async function TutionFeesPage() {
+  const { hero, content } = (await getCachedGlobal('tution-fees')()) as StudentsLife
   return (
     <main>
       <MainHero hero={hero} />

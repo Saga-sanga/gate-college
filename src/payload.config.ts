@@ -41,6 +41,8 @@ import { admin } from './payload/access/admin'
 import { HighlightSection } from './payload/globals/HighlightSection/HighlightSection'
 import { About } from './payload/globals/About/About'
 import { StudentLife } from './payload/globals/StudentLife/StudentLife'
+import { TutionFees } from './payload/globals/TutionFees/TutionFees'
+import { Programs } from './payload/globals/Programs/Programs'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -147,7 +149,7 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [Hero, HighlightSection, Header, Footer, About, StudentLife],
+  globals: [Hero, HighlightSection, Header, Footer, About, StudentLife, TutionFees, Programs],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],
