@@ -41,7 +41,7 @@ export const Programs: GlobalConfig = {
                     features: ({ rootFeatures }) => {
                       return [
                         ...rootFeatures,
-                        HeadingFeature({ enabledHeadingSizes: ['h2', 'h3'] }),
+                        HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
                         BlocksFeature({ blocks: [Banner, MediaBlock] }),
                         FixedToolbarFeature(),
                         InlineToolbarFeature(),

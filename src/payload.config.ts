@@ -43,6 +43,7 @@ import { About } from './payload/globals/About/About'
 import { StudentLife } from './payload/globals/StudentLife/StudentLife'
 import { TutionFees } from './payload/globals/TutionFees/TutionFees'
 import { Programs } from './payload/globals/Programs/Programs'
+import { Leadership } from './payload/globals/Leadership/Leadership'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -149,7 +150,17 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [Hero, HighlightSection, Header, Footer, About, StudentLife, TutionFees, Programs],
+  globals: [
+    Hero,
+    HighlightSection,
+    Header,
+    Footer,
+    About,
+    StudentLife,
+    TutionFees,
+    Programs,
+    Leadership,
+  ],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],
