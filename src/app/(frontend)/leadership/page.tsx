@@ -1,3 +1,4 @@
+import { cn } from '@/utilities/cn'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import type { Leadership } from 'src/payload-types'
 
@@ -14,7 +15,7 @@ export default async function LeadershipPage() {
   )()) as Leadership
 
   return (
-    <main className="my-16">
+    <div className="mt-16">
       <section className="container">
         <h1 className="text-primary text-5xl font-serif">{leadership.title}</h1>
         <hr className="mt-5 border-secondary-muted" />
@@ -43,14 +44,14 @@ export default async function LeadershipPage() {
             content.map((group) => <ItemsGroup key={group.id} group={group} />)}
         </section>
       </div>
-    </main>
+    </div>
   )
 }
 
 function ItemsGroup({ group }: { group: Group }) {
   return (
     <div className="space-y-8">
-      <h3 className="uppercase text-xl text-muted-foreground font-medium">{group.heading}</h3>
+      <h3 className="uppercase text-xl text-foreground/75 font-medium">{group.heading}</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {group?.items?.length > 0 &&
           group.items.map((item) => <ItemProfile key={item.id} item={item} />)}
@@ -62,11 +63,13 @@ function ItemsGroup({ group }: { group: Group }) {
 function ItemProfile({ item }: ItemProfieProps) {
   return (
     <article className="flex flex-row items-center space-x-5">
-      <img
-        src={item.image.url}
-        alt={item.image.alt}
-        className="rounded-full object-cover h-28 w-28"
-      />
+      <div className={cn(!item.image && 'bg-primary-muted', 'rounded-full')}>
+        <img
+          src={item.image.url}
+          alt={item.image.alt}
+          className="rounded-full object-cover h-28 w-28"
+        />
+      </div>
       <div>
         <h4 className="font-medium text-lg">{item.name}</h4>
         <span className="text-sm text-muted-foreground">{item.descripton}</span>

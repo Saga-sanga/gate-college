@@ -1,0 +1,23 @@
+.head-logo::before {
+  content: '';
+  left: 0;
+  bottom: -4px;
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background-color: white;
+  transform: skewY(9deg);
+  border-bottom-left-radius: 2.5rem;
+}
+
+.head-logo::after {
+  content: '';
+  right: 0;
+  bottom: -4px;
+  position: absolute;
+  width: 99px;
+  height: 90px;
+  background-color: white;
+  transform: skewY(-9deg);
+  border-bottom-right-radius: 2.5rem;
+}
