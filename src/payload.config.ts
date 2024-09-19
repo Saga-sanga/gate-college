@@ -30,8 +30,6 @@ import { Pages } from './payload/collections/Pages'
 import { Posts } from './payload/collections/Posts'
 import Users from './payload/collections/Users'
 import { seed } from './payload/endpoints/seed'
-import { Footer } from './payload/globals/Footer/Footer'
-import { Header } from './payload/globals/Header/Header'
 import { revalidateRedirects } from './payload/hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Page, Post } from 'src/payload-types'
@@ -151,17 +149,7 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [
-    Hero,
-    HighlightSection,
-    Header,
-    Footer,
-    About,
-    StudentLife,
-    TutionFees,
-    Programs,
-    Leadership,
-  ],
+  globals: [Hero, HighlightSection, About, StudentLife, TutionFees, Programs, Leadership],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],
