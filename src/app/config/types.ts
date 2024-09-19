@@ -9,3 +9,8 @@ export type NavItems = {
   label: string
   href: string
 }[]
+
+export type ContactItems = {
+  label: string
+  phone: string
+}[]
