@@ -4,3 +4,8 @@ export type InfoCardConfig = {
   label: string
   href: string
 }
+
+export type NavItems = {
+  label: string
+  href: string
+}[]
