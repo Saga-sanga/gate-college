@@ -1,4 +1,3 @@
-import { Media } from '@/components/Media'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import type { Leadership } from 'src/payload-types'
 
@@ -21,7 +20,7 @@ export default async function LeadershipPage() {
         <hr className="mt-5 border-secondary-muted" />
         <p className="p-16 text-muted-foreground">{leadership.description}</p>
       </section>
-      <section className="flex flex-col md:flex-row container">
+      <section className="flex flex-col lg:flex-row container">
         <div className="relative w-full bg-primary-muted basis-1/3">
           {!highlight.image && <div className="">No image</div>}
           {highlight.image && typeof highlight.image !== 'string' && (
@@ -30,7 +29,6 @@ export default async function LeadershipPage() {
               alt={highlight.image.alt}
               className="object-cover h-full"
             />
-            // <Media resource={highlight.image} size="360" className="h-full" />
           )}
         </div>
         <div className="basis-2/3 relative flex flex-col justify-center bg-muted py-24 px-16 space-y-8">
@@ -40,7 +38,7 @@ export default async function LeadershipPage() {
         </div>
       </section>
       <div className="bg-muted mt-12">
-        <section className="container py-12 space-y-20">
+        <section className="container py-12 px-8 space-y-20">
           {content.length > 0 &&
             content.map((group) => <ItemsGroup key={group.id} group={group} />)}
         </section>
@@ -52,8 +50,8 @@ export default async function LeadershipPage() {
 function ItemsGroup({ group }: { group: Group }) {
   return (
     <div className="space-y-8">
-      <h3 className="uppercase text-2xl text-muted-foreground font-medium">{group.heading}</h3>
-      <div className="grid grid-cols-3 gap-10">
+      <h3 className="uppercase text-xl text-muted-foreground font-medium">{group.heading}</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {group?.items?.length > 0 &&
           group.items.map((item) => <ItemProfile key={item.id} item={item} />)}
       </div>
