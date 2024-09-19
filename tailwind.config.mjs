@@ -57,6 +57,7 @@ module.exports = {
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
+          dark: 'hsl(var(--accent-dark))',
         },
         background: 'hsl(var(--background))',
         border: 'hsl(var(--border))',
@@ -82,6 +83,7 @@ module.exports = {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
           muted: 'hsl(var(--primary-muted))',
+          dark: 'hsl(var(--primary-dark))',
         },
         ring: 'hsl(var(--ring))',
         secondary: {
