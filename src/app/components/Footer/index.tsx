@@ -6,7 +6,7 @@ import React from 'react'
 
 export async function Footer() {
   return (
-    <footer className="border-t border-border bg-accent-dark text-accent-foreground">
+    <footer className="border-t border-muted-foreground bg-accent-dark text-accent-foreground">
       <div className="container py-14 gap-8 flex flex-col md:flex-row md:justify-between">
         <div className="gap-8 flex flex-col xl:flex-row items-start">
           <Link className="flex items-center" href="/">
