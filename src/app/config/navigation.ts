@@ -32,4 +32,8 @@ export const rightNav: NavItems = [
     label: 'Student Life',
     href: '/student-life',
   },
+  {
+    label: 'Donate',
+    href: '/donate',
+  },
 ]

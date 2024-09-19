@@ -70,7 +70,7 @@ function NavLink({ navItem }: { navItem: NavItems[number] }) {
   return (
     <Link
       href={navItem.href}
-      className="text-white uppercase text-sm hover:underline hover:underline-offset-2"
+      className="text-white uppercase font-medium text-sm hover:underline hover:underline-offset-2"
     >
       {navItem.label}
     </Link>
