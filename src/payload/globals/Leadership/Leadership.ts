@@ -51,7 +51,7 @@ export const Leadership: GlobalConfig = {
           type: 'text',
         },
         {
-          name: 'item',
+          name: 'items',
           type: 'array',
           fields: [
             {
