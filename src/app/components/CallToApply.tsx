@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function CallToApply() {
   return (
     <section className="py-20 background-radial-primary">
-      <div className="container flex flex-row items-center justify-between">
+      <div className="container flex gap-8 flex-col md:flex-row items-center justify-between">
         <div>
           <p className="basis-3/5 text-background text-2xl max-w-[38ch] tracking-wide font-serif">
             Embark on a transformative journey at GATE Adventist Theology College, where we Guide,
@@ -12,7 +12,7 @@ export function CallToApply() {
           </p>
           <hr className="w-[15%] border-t-4 mt-2 border-secondary" />
         </div>
-        <Link href="#" className="fancy-button-secondary capitalize text-center">
+        <Link href="#" className="fancy-button-secondary capitalize whitespace-nowrap text-center">
           Apply Now
         </Link>
       </div>
