@@ -3,7 +3,7 @@
   left: 0;
   bottom: -4px;
   position: absolute;
-  width: 100px;
+  width: 50%;
   height: 90px;
   background-color: white;
   transform: skewY(9deg);
@@ -15,7 +15,7 @@
   right: 0;
   bottom: -4px;
   position: absolute;
-  width: 99px;
+  width: calc(50% + 1px);
   height: 90px;
   background-color: white;
   transform: skewY(-9deg);
