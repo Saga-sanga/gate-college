@@ -24,7 +24,7 @@ function InfoCard({ info }: Props) {
 export function InfoCardList() {
   return (
     <div className="background-radial-primary">
-      <section className="container grid py-24 grid-cols-3 gap-20">
+      <section className="container grid py-24 grid-cols-1 lg:grid-cols-3 gap-20">
         {infoCardConfig.map((info, i) => (
           <InfoCard key={i} info={info} />
         ))}

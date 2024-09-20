@@ -25,12 +25,12 @@ export const HeaderClient: React.FC = () => {
 function MainNav() {
   return (
     <nav className="flex items-center justify-between w-full">
-      <div className="space-x-10">
+      <div className="space-x-6 xl:space-x-10">
         {leftNav.map((navItem, i) => (
           <NavLink key={i} navItem={navItem} />
         ))}
       </div>
-      <div className="space-x-10">
+      <div className="space-x-6 xl:space-x-10">
         {rightNav.map((navItem, i) => (
           <NavLink key={i} navItem={navItem} />
         ))}
@@ -43,7 +43,7 @@ function NavLink({ navItem }: { navItem: NavItems[number] }) {
   return (
     <Link
       href={navItem.href}
-      className="text-white uppercase font-medium text-sm hover:underline hover:underline-offset-2"
+      className="text-white capitalize font-medium text-sm hover:underline hover:underline-offset-2"
     >
       {navItem.label}
     </Link>
