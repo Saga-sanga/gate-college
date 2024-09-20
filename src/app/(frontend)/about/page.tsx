@@ -7,12 +7,12 @@ export default async function AboutPage() {
   const { hero, content } = (await getCachedGlobal('about', 1)()) as About
 
   return (
-    <main>
+    <div>
       <MainHero hero={hero} />
       <article className="space-y-12">
         {content.length > 0 &&
           content.map((item, i) => (
-            <RichText className="prose-xl prose-h2:text-primary" key={i} content={item.richText} />
+            <RichText className="prose-lg prose-h2:text-primary" key={i} content={item.richText} />
           ))}
         <div className="bg-muted pt-14 pb-28 ">
           <div className="container space-y-12">
@@ -21,7 +21,7 @@ export default async function AboutPage() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   )
 }
 
