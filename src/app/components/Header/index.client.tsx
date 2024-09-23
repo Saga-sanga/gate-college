@@ -4,7 +4,11 @@ import React from 'react'
 
 import { Logo } from '../Logo/Logo'
 import { leftNav, rightNav } from '@/config/navigation'
-import { NavItems } from '@/config/types'
+import { DrawerSheet } from './DrawerSheet'
+import { NavLink } from './Nav/NavLink'
+import { cn } from '@/utilities/cn'
+
+interface MainNavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const HeaderClient: React.FC = () => {
   return (
@@ -16,15 +20,16 @@ export const HeaderClient: React.FC = () => {
           </Link>
         </div>
         {/* <HeaderNav header={header} /> */}
-        <MainNav />
+        <MainNav className="hidden lg:flex" />
+        <DrawerSheet className="lg:hidden" />
       </div>
     </header>
   )
 }
 
-function MainNav() {
+function MainNav({ className }: MainNavProps) {
   return (
-    <nav className="flex items-center justify-between w-full">
+    <nav className={cn('flex items-center justify-between w-full', className)}>
       <div className="space-x-6 xl:space-x-10">
         {leftNav.map((navItem, i) => (
           <NavLink key={i} navItem={navItem} />
@@ -36,16 +41,5 @@ function MainNav() {
         ))}
       </div>
     </nav>
-  )
-}
-
-function NavLink({ navItem }: { navItem: NavItems[number] }) {
-  return (
-    <Link
-      href={navItem.href}
-      className="text-white capitalize font-medium text-sm hover:underline hover:underline-offset-2"
-    >
-      {navItem.label}
-    </Link>
   )
 }
