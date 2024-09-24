@@ -44,6 +44,7 @@ import { Programs } from './payload/globals/Programs/Programs'
 import { Leadership } from './payload/globals/Leadership/Leadership'
 import { Images } from './payload/collections/Images'
 import { Donation } from './payload/globals/Donation'
+import { Apply } from './payload/globals/Apply'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -150,7 +151,17 @@ export default buildConfig({
       path: '/seed',
     },
   ],
-  globals: [Hero, HighlightSection, About, StudentLife, TutionFees, Programs, Donation, Leadership],
+  globals: [
+    Hero,
+    HighlightSection,
+    About,
+    StudentLife,
+    TutionFees,
+    Programs,
+    Donation,
+    Leadership,
+    Apply,
+  ],
   plugins: [
     redirectsPlugin({
       collections: ['pages', 'posts'],
