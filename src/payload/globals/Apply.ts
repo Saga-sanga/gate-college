@@ -5,8 +5,10 @@ import {
   BlocksFeature,
   FixedToolbarFeature,
   HeadingFeature,
+  HTMLConverterFeature,
   InlineToolbarFeature,
   lexicalEditor,
+  lexicalHTML,
 } from '@payloadcms/richtext-lexical'
 import { Banner } from '../blocks/Banner'
 import { MediaBlock } from '../blocks/MediaBlock'
@@ -44,11 +46,13 @@ export const Apply: GlobalConfig = {
                         BlocksFeature({ blocks: [Banner, MediaBlock] }),
                         FixedToolbarFeature(),
                         InlineToolbarFeature(),
+                        HTMLConverterFeature({}),
                       ]
                     },
                   }),
                   label: false,
                 },
+                lexicalHTML('richText', { name: 'richText_html' }),
               ],
             },
           ],

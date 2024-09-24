@@ -1076,6 +1076,7 @@ export interface Apply {
           };
           [k: string]: unknown;
         } | null;
+        richText_html?: string | null;
         id?: string | null;
       }[]
     | null;

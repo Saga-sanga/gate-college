@@ -4,8 +4,15 @@ import { CodeBlock, CodeBlockProps } from '@/blocks/Code'
 import { MediaBlock } from '@/blocks/MediaBlock'
 import React, { Fragment, JSX } from 'react'
 import { CMSLink } from 'src/app/components/Link'
-import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
+import {
+  DefaultNodeTypes,
+  SerializedBlockNode,
+  SerializedTableCellNode,
+  SerializedTableNode,
+  SerializedTableRowNode,
+} from '@payloadcms/richtext-lexical'
 import type { BannerBlock as BannerBlockProps } from 'src/payload-types'
+import parse from 'html-react-parser'
 
 import {
   IS_BOLD,
@@ -20,8 +27,10 @@ import type { Page } from '../../../payload-types'
 
 export type NodeTypes =
   | DefaultNodeTypes
+  | SerializedTableNode
+  | SerializedTableRowNode
+  | SerializedTableCellNode
   | SerializedBlockNode<
-      // @ts-ignore // TODO: Fix this
       | Extract<Page['layout'][0], { blockType: 'cta' }>
       | Extract<Page['layout'][0], { blockType: 'mediaBlock' }>
       | BannerBlockProps
@@ -201,6 +210,31 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
               )
             }
 
+            case 'table': {
+              return (
+                <table>
+                  <tbody>{serializedChildren}</tbody>
+                </table>
+              )
+            }
+            case 'tablerow': {
+              return <tr>{serializedChildren}</tr>
+            }
+            case 'tablecell': {
+              return (
+                <>
+                  {node?.headerState ? (
+                    <th colSpan={node.colSpan} rowSpan={node.rowSpan}>
+                      {serializedChildren}
+                    </th>
+                  ) : (
+                    <td colSpan={node.colSpan} rowSpan={node.rowSpan}>
+                      {serializedChildren}
+                    </td>
+                  )}
+                </>
+              )
+            }
             default:
               return null
           }

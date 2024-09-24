@@ -2,6 +2,7 @@ import { HighlightSection } from '@/components/HighlightSection'
 import { MainHero } from '@/components/MainHero'
 import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
+import { Fragment } from 'react'
 import { About } from 'src/payload-types'
 
 export default async function ApplyPage() {
@@ -12,8 +13,12 @@ export default async function ApplyPage() {
       <MainHero hero={hero} />
       <article className="container space-y-12 my-12">
         {content.length > 0 &&
-          content.map((item, i) => (
-            <RichText className="prose-lg prose-h2:text-primary" key={i} content={item.richText} />
+          content.map((item) => (
+            <RichText
+              key={item.id}
+              className="prose-lg prose-h2:text-primary"
+              content={item.richText}
+            />
           ))}
       </article>
       <section className="bg-muted py-20"></section>
