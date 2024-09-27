@@ -6,7 +6,7 @@ export const adminOrSelf: Access = ({ req: { user } }) => {
 
   return {
     email: {
-      equals: user.email,
+      equals: user?.email,
     },
   }
 }

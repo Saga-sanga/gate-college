@@ -334,6 +334,7 @@ export interface Media {
     };
     [k: string]: unknown;
   } | null;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -572,6 +573,7 @@ export interface Event {
 export interface Image {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -591,6 +593,7 @@ export interface Image {
 export interface Document {
   id: number;
   name: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
