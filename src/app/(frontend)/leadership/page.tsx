@@ -28,7 +28,7 @@ export default async function LeadershipPage() {
             <img
               // @ts-ignore : valid type
               src={highlight.image.url}
-              // @ts-ignore : talid type
+              // @ts-ignore : valid type
               alt={highlight.image.alt}
               className="object-cover h-full"
             />
@@ -67,7 +67,9 @@ function ItemProfile({ item }: ItemProfieProps) {
     <article className="flex flex-row items-center space-x-5">
       <div className={cn(!item.image && 'bg-primary-muted', 'rounded-full')}>
         <img
+          // @ts-ignore : valid type
           src={item.image.url}
+          // @ts-ignore : valid type
           alt={item.image.alt}
           className="rounded-full object-cover h-28 w-28"
         />

@@ -3,6 +3,7 @@ import type { CollectionConfig } from 'payload'
 import { protectRoles } from 'src/payload/hooks/protectRoles'
 import { checkRole } from 'src/payload/access/checkRole'
 import { admin } from '@/payload/access/admin'
+import { adminOrSelf } from '@/payload/access/adminOrSelf'
 
 const Users: CollectionConfig = {
   slug: 'users',
@@ -11,7 +12,7 @@ const Users: CollectionConfig = {
     create: admin,
     delete: admin,
     read: admin,
-    update: admin,
+    update: adminOrSelf,
   },
   admin: {
     defaultColumns: ['name', 'email'],
