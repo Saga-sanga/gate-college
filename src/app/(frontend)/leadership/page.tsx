@@ -25,9 +25,10 @@ export default async function LeadershipPage() {
         <div className="relative w-full bg-primary-muted basis-1/3">
           {!highlight.image && <div className="">No image</div>}
           {highlight.image && typeof highlight.image !== 'string' && (
-            // @ts-ignore : valid type
             <img
+              // @ts-ignore : valid type
               src={highlight.image.url}
+              // @ts-ignore : talid type
               alt={highlight.image.alt}
               className="object-cover h-full"
             />
