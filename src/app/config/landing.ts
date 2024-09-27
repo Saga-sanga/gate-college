@@ -19,7 +19,7 @@ export const infoCardConfig: InfoCardConfig[] = [
     title: 'How can I apply?',
     description:
       "The decision to attend college is one of the most important ones you'll ever make—we're here to make it easy, and you can start now.",
-    label: 'Click to Apply',
-    href: '/',
+    label: 'Learn More',
+    href: '/apply',
   },
 ]

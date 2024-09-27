@@ -2,7 +2,6 @@ import { HighlightSection } from '@/components/HighlightSection'
 import { MainHero } from '@/components/MainHero'
 import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
-import { Fragment } from 'react'
 import { About } from 'src/payload-types'
 
 export default async function ApplyPage() {

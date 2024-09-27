@@ -9,8 +9,8 @@ import { authenticated } from '../access/authenticated'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-export const Images: CollectionConfig = {
-  slug: 'images',
+export const Documents: CollectionConfig = {
+  slug: 'documents',
   access: {
     create: authenticated,
     delete: authenticated,
@@ -19,16 +19,14 @@ export const Images: CollectionConfig = {
   },
   fields: [
     {
-      name: 'alt',
+      name: 'name',
       type: 'text',
       required: true,
     },
   ],
   upload: {
     // Upload to the public/media directory in Next.js making them publicly accessible even outside of Payload
-    staticDir: path.resolve(dirname, '../../../public/images'),
-    mimeTypes: ['image/*'],
-    crop: true,
-    focalPoint: true,
+    staticDir: path.resolve(dirname, '../../../public/documents'),
+    mimeTypes: ['application/pdf'],
   },
 }

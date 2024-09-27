@@ -45,6 +45,7 @@ import { Leadership } from './payload/globals/Leadership/Leadership'
 import { Images } from './payload/collections/Images'
 import { Donation } from './payload/globals/Donation'
 import { Apply } from './payload/globals/Apply'
+import { Documents } from './payload/collections/Documents'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -139,7 +140,7 @@ export default buildConfig({
       // authToken: process.env.TURSO_AUTH_TOKEN,
     },
   }),
-  collections: [Pages, Posts, Events, Media, Images, Categories, Users],
+  collections: [Pages, Posts, Events, Media, Images, Documents, Categories, Users],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [
