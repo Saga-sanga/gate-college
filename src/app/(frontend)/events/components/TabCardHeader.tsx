@@ -2,7 +2,6 @@
 import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { getFormattedWeekRange } from '@/utilities/getFormattedWeekRange'
-import { endOfWeek, startOfWeek } from 'date-fns'
 import { Search } from 'lucide-react'
 
 type Props = {

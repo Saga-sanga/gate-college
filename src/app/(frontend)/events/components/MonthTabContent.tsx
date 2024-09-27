@@ -1,15 +1,14 @@
 'use client'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { TabsContent } from '@/components/ui/tabs'
-import { CalendarDays, Clock, MapPin } from 'lucide-react'
 import { useState } from 'react'
 import { TabCardHeader } from './TabCardHeader'
 import { filterEvents } from '@/utilities/filterEvents'
 import { EventCard } from './EventCard'
-import { Events } from '../page'
+import type { Event } from 'src/payload-types'
 
 type Props = {
-  events: Events
+  events: Event[]
   date: Date
 }
 
