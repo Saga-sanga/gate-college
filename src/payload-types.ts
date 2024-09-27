@@ -16,6 +16,7 @@ export interface Config {
     events: Event;
     media: Media;
     images: Image;
+    documents: Document;
     categories: Category;
     users: User;
     redirects: Redirect;
@@ -90,8 +91,8 @@ export interface Page {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
+              relationTo: 'posts';
+              value: number | Post;
             } | null;
             url?: string | null;
             label: string;
@@ -125,8 +126,8 @@ export interface Page {
                 type?: ('reference' | 'custom') | null;
                 newTab?: boolean | null;
                 reference?: {
-                  relationTo: 'pages';
-                  value: number | Page;
+                  relationTo: 'posts';
+                  value: number | Post;
                 } | null;
                 url?: string | null;
                 label: string;
@@ -163,8 +164,8 @@ export interface Page {
                 type?: ('reference' | 'custom') | null;
                 newTab?: boolean | null;
                 reference?: {
-                  relationTo: 'pages';
-                  value: number | Page;
+                  relationTo: 'posts';
+                  value: number | Post;
                 } | null;
                 url?: string | null;
                 label: string;
@@ -251,59 +252,6 @@ export interface Page {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
-export interface Media {
-  id: number;
-  alt: string;
-  caption?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "categories".
- */
-export interface Category {
-  id: number;
-  title: string;
-  parent?: (number | null) | Category;
-  breadcrumbs?:
-    | {
-        doc?: (number | null) | Category;
-        url?: string | null;
-        label?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
 export interface Post {
@@ -344,6 +292,59 @@ export interface Post {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: number;
+  title: string;
+  parent?: (number | null) | Category;
+  breadcrumbs?:
+    | {
+        doc?: (number | null) | Category;
+        url?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  alt: string;
+  caption?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -585,6 +586,25 @@ export interface Image {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "documents".
+ */
+export interface Document {
+  id: number;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -685,8 +705,8 @@ export interface HeroMain {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
+              relationTo: 'posts';
+              value: number | Post;
             } | null;
             url?: string | null;
             label: string;
@@ -740,8 +760,8 @@ export interface About {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
+              relationTo: 'posts';
+              value: number | Post;
             } | null;
             url?: string | null;
             label: string;
@@ -803,8 +823,8 @@ export interface StudentLife {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
+              relationTo: 'posts';
+              value: number | Post;
             } | null;
             url?: string | null;
             label: string;
@@ -866,8 +886,8 @@ export interface TutionFee {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
+              relationTo: 'posts';
+              value: number | Post;
             } | null;
             url?: string | null;
             label: string;
@@ -929,8 +949,8 @@ export interface Program {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
+              relationTo: 'posts';
+              value: number | Post;
             } | null;
             url?: string | null;
             label: string;
@@ -1047,8 +1067,8 @@ export interface Apply {
             type?: ('reference' | 'custom') | null;
             newTab?: boolean | null;
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
+              relationTo: 'posts';
+              value: number | Post;
             } | null;
             url?: string | null;
             label: string;

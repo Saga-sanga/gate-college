@@ -109,7 +109,7 @@ export default buildConfig({
         TableFeature(),
         BlockquoteFeature(),
         LinkFeature({
-          enabledCollections: ['pages', 'posts'],
+          enabledCollections: ['posts', 'documents', 'media', 'images'],
           fields: ({ defaultFields }) => {
             const defaultFieldsWithoutUrl = defaultFields.filter((field) => {
               if ('name' in field && field.name === 'url') return false
