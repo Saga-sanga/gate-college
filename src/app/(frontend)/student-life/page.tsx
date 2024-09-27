@@ -2,10 +2,10 @@ import { CallToApply } from '@/components/CallToApply'
 import { MainHero } from '@/components/MainHero'
 import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
-import { StudentsLife } from 'src/payload-types'
+import { StudentLife } from 'src/payload-types'
 
 export default async function StudentLifePage() {
-  const { hero, content } = (await getCachedGlobal('students-life')()) as StudentsLife
+  const { hero, content } = (await getCachedGlobal('student-life', 1)()) as StudentLife
   return (
     <main>
       <MainHero hero={hero} />

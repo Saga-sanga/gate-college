@@ -3,7 +3,7 @@ import { getCachedGlobal } from '@/utilities/getGlobals'
 import { Donation } from 'src/payload-types'
 
 export default async function DonatePage() {
-  const { title, content } = (await getCachedGlobal('donation')()) as Donation
+  const { title, content } = (await getCachedGlobal('donation', 1)()) as Donation
 
   return (
     <article className="container my-20 space-y-12">

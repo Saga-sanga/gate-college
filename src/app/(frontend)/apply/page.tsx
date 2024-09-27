@@ -2,10 +2,10 @@ import { HighlightSection } from '@/components/HighlightSection'
 import { MainHero } from '@/components/MainHero'
 import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
-import { About } from 'src/payload-types'
+import { Apply } from 'src/payload-types'
 
 export default async function ApplyPage() {
-  const { hero, content } = (await getCachedGlobal('apply', 1)()) as About
+  const { hero, content } = (await getCachedGlobal('apply', 1)()) as Apply
 
   return (
     <div>
