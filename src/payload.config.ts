@@ -68,7 +68,7 @@ export default buildConfig({
       beforeLogin: ['/payload/components/BeforeLogin'],
       // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeDashboard` statement on line 15.
-      beforeDashboard: ['/payload/components/BeforeDashboard'],
+      // beforeDashboard: ['/payload/components/BeforeDashboard'],
     },
     importMap: {
       baseDir: path.resolve(dirname),
@@ -135,9 +135,9 @@ export default buildConfig({
   }),
   db: sqliteAdapter({
     client: {
-      url: process.env.DATABASE_URI || '',
-      // url: process.env.TURSO_DATABASE_URL,
-      // authToken: process.env.TURSO_AUTH_TOKEN,
+      // url: process.env.DATABASE_URI || '',
+      url: process.env.TURSO_DATABASE_URL,
+      authToken: process.env.TURSO_AUTH_TOKEN,
     },
   }),
   collections: [Pages, Posts, Events, Media, Images, Documents, Categories, Users],
@@ -146,11 +146,11 @@ export default buildConfig({
   endpoints: [
     // The seed endpoint is used to populate the database with some example data
     // You should delete this endpoint before deploying your site to production
-    {
-      handler: seed,
-      method: 'get',
-      path: '/seed',
-    },
+    // {
+    //   handler: seed,
+    //   method: 'get',
+    //   path: '/seed',
+    // },
   ],
   globals: [
     Hero,
