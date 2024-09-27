@@ -13,7 +13,11 @@ const heroes = {
 }
 
 export const Hero: React.FC<Page['hero']> = (props) => {
-  const { type } = props || {}
+  const {
+    richText: {
+      root: { type },
+    },
+  } = props || {}
 
   if (!type || type === 'none') return null
 
