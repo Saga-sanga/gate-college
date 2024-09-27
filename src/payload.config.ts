@@ -23,6 +23,7 @@ import { UnderlineFeature } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
+import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
 
 import Categories from './payload/collections/Categories'
 import { Media } from './payload/collections/Media'
@@ -59,6 +60,18 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
     ? `${process.env.NEXT_PUBLIC_SERVER_URL}/${doc.slug}`
     : process.env.NEXT_PUBLIC_SERVER_URL
 }
+
+const adapter = s3Adapter({
+  config: {
+    credentials: {
+      accessKeyId: process.env.S3_ACCESS_KEY_ID,
+      secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+    },
+    region: 'auto',
+    endpoint: process.env.S3_ENDPOINT,
+  },
+  bucket: process.env.S3_BUCKET,
+})
 
 export default buildConfig({
   admin: {

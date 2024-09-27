@@ -12,7 +12,6 @@ import {
   SerializedTableRowNode,
 } from '@payloadcms/richtext-lexical'
 import type { BannerBlock as BannerBlockProps } from 'src/payload-types'
-import parse from 'html-react-parser'
 
 import {
   IS_BOLD,
