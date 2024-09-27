@@ -1,7 +1,7 @@
 // storage-adapter-import-placeholder
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 
-import { payloadCloudPlugin } from '@payloadcms/plugin-cloud'
+import { cloudStorage } from '@payloadcms/plugin-cloud-storage'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
@@ -30,7 +30,6 @@ import { Media } from './payload/collections/Media'
 import { Pages } from './payload/collections/Pages'
 import { Posts } from './payload/collections/Posts'
 import Users from './payload/collections/Users'
-import { seed } from './payload/endpoints/seed'
 import { revalidateRedirects } from './payload/hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Page, Post } from 'src/payload-types'
@@ -247,7 +246,13 @@ export default buildConfig({
         },
       },
     }),
-    payloadCloudPlugin(), // storage-adapter-placeholder
+    cloudStorage({
+      collections: {
+        media: { adapter, prefix: 'media' },
+        images: { adapter, prefix: 'images' },
+        documents: { adapter, prefix: 'documents' },
+      },
+    }),
   ],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
