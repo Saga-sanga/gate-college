@@ -30,7 +30,7 @@ export async function MainHero({ hero: { richText, links, media } }: Props) {
       <div className="min-h-[85dvh] select-none">
         {typeof media === 'object' && (
           <Fragment>
-            <Media fill imgClassName="-z-10 object-cover" resource={media} />
+            <Media fill imgClassName="-z-10 object-cover" resource={media} priority />
             <div className="absolute pointer-events-none left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
           </Fragment>
         )}
