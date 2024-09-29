@@ -33,7 +33,9 @@ export async function HighlightSection() {
             ></iframe>
           )}
           <div className="h-full pt-4 pe-12">
-            <p className="text-2xl max-w-[38ch] tracking-wide">{highlight.description}</p>
+            <p className="text-3xl font-serif max-w-[38ch] tracking-wide">
+              {highlight.description}
+            </p>
           </div>
         </div>
       </article>
