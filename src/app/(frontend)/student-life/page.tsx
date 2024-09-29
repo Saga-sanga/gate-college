@@ -14,8 +14,8 @@ export default async function StudentLifePage() {
           content.map((item, i) => (
             <RichText className="prose-xl prose-h2:text-primary" key={i} content={item.richText} />
           ))}
-        <CallToApply />
       </article>
+      <CallToApply />
     </main>
   )
 }
