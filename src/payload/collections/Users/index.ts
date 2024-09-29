@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 import { protectRoles } from 'src/payload/hooks/protectRoles'
 import { checkRole } from 'src/payload/access/checkRole'
-import { admin } from '@/payload/access/admin'
+import { admin, adminFieldLevel } from '@/payload/access/admin'
 import { adminOrSelf } from '@/payload/access/adminOrSelf'
 
 const Users: CollectionConfig = {
@@ -11,7 +11,7 @@ const Users: CollectionConfig = {
     admin: ({ req: { user } }) => checkRole(['admin', 'manager'], user),
     create: admin,
     delete: admin,
-    read: admin,
+    read: adminOrSelf,
     update: adminOrSelf,
   },
   admin: {
@@ -49,7 +49,8 @@ const Users: CollectionConfig = {
         },
       ],
       access: {
-        read: ({ req: { user } }) => checkRole(['admin'], user),
+        update: adminFieldLevel,
+        create: adminFieldLevel,
       },
     },
   ],

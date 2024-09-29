@@ -5,8 +5,8 @@ export const adminOrSelf: Access = ({ req: { user } }) => {
   if (checkRole(['admin'], user)) return true
 
   return {
-    email: {
-      equals: user?.email,
+    id: {
+      equals: user?.id,
     },
   }
 }
