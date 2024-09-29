@@ -6,7 +6,7 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  darkMode: ['selector', '[data-theme="dark"]'],
+  darkMode: ['[data-theme="dark"]'],
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
   prefix: '',
   safelist: [
