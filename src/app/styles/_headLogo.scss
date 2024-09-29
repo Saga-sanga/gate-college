@@ -1,5 +1,6 @@
 .head-logo::before {
   content: '';
+  z-index: -10;
   left: 0;
   bottom: -4px;
   position: absolute;
@@ -12,6 +13,7 @@
 
 .head-logo::after {
   content: '';
+  z-index: -10;
   right: 0;
   bottom: -4px;
   position: absolute;
