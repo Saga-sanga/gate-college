@@ -12,7 +12,10 @@ export function CallToApply() {
           </p>
           <hr className="w-[15%] border-t-4 mt-2 border-secondary" />
         </div>
-        <Link href="#" className="fancy-button-secondary capitalize whitespace-nowrap text-center">
+        <Link
+          href="/apply"
+          className="fancy-button-secondary capitalize whitespace-nowrap text-center"
+        >
           Apply Now
         </Link>
       </div>

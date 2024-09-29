@@ -30,7 +30,7 @@ export default async function LeadershipPage() {
               src={highlight.image.url}
               // @ts-ignore : valid type
               alt={highlight.image.alt}
-              className="object-cover h-full"
+              className="object-cover w-full h-full"
             />
           )}
         </div>
