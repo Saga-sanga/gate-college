@@ -32,7 +32,7 @@
     "@payloadcms/plugin-redirects": "3.0.0-beta.109",
     "@payloadcms/plugin-seo": "3.0.0-beta.109",
     "@payloadcms/richtext-lexical": "3.0.0-beta.109",
-    "@payloadcms/storage-s3": "3.0.0-beta.29",
+    "@payloadcms/storage-s3": "3.0.0-beta.109",
     "@payloadcms/ui": "3.0.0-beta.109",
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",

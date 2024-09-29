@@ -1,5 +1,6 @@
 import { cn } from '@/utilities/cn'
 import { getCachedGlobal } from '@/utilities/getGlobals'
+import Image from 'next/image'
 import type { Leadership } from 'src/payload-types'
 
 type Group = Leadership['content'][number]
@@ -25,9 +26,11 @@ export default async function LeadershipPage() {
         <div className="relative w-full bg-primary-muted basis-1/3">
           {!highlight.image && <div className="">No image</div>}
           {highlight.image && typeof highlight.image !== 'string' && (
-            <img
+            <Image
               // @ts-ignore : valid type
               src={highlight.image.url}
+              width={437}
+              height={300}
               // @ts-ignore : valid type
               alt={highlight.image.alt}
               className="object-cover w-full h-full"
@@ -66,11 +69,13 @@ function ItemProfile({ item }: ItemProfieProps) {
   return (
     <article className="flex flex-row items-center space-x-5">
       <div className={cn(!item.image && 'bg-primary-muted', 'rounded-full')}>
-        <img
+        <Image
           // @ts-ignore : valid type
           src={item.image.url}
           // @ts-ignore : valid type
           alt={item.image.alt}
+          width={112}
+          height={112}
           className="rounded-full object-cover h-28 w-28"
         />
       </div>
