@@ -4,6 +4,7 @@ import { revalidateHero } from './hooks/revalidateHero'
 import { authenticated } from '@/payload/access/authenticated'
 
 export const Hero: GlobalConfig = {
+  lockDocuments: false,
   slug: 'hero-main',
   access: {
     read: authenticated,

@@ -21,6 +21,7 @@
     "@aws-sdk/client-s3": "^3.658.1",
     "@aws-sdk/lib-storage": "^3.658.1",
     "@hookform/resolvers": "^3.9.0",
+    "@libsql/client": "0.6.2",
     "@payloadcms/db-sqlite": "3.0.0-beta.109",
     "@payloadcms/live-preview-react": "3.0.0-beta.109",
     "@payloadcms/next": "3.0.0-beta.109",
@@ -31,6 +32,7 @@
     "@payloadcms/plugin-redirects": "3.0.0-beta.109",
     "@payloadcms/plugin-seo": "3.0.0-beta.109",
     "@payloadcms/richtext-lexical": "3.0.0-beta.109",
+    "@payloadcms/storage-s3": "3.0.0-beta.29",
     "@payloadcms/ui": "3.0.0-beta.109",
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -60,8 +62,7 @@
     "sharp": "0.32.6",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.23.8",
-    "@libsql/client": "0.6.2"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.5.6",

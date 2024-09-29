@@ -1,7 +1,6 @@
 // storage-adapter-import-placeholder
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 
-import { cloudStoragePlugin as cloudStorage } from '@payloadcms/plugin-cloud-storage'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
@@ -23,7 +22,7 @@ import { UnderlineFeature } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
-import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
+import { s3Storage } from '@payloadcms/storage-s3'
 
 import Categories from './payload/collections/Categories'
 import { Media } from './payload/collections/Media'
@@ -60,7 +59,7 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
     : process.env.NEXT_PUBLIC_SERVER_URL
 }
 
-const adapter = s3Adapter({
+const s3config = {
   config: {
     credentials: {
       accessKeyId: process.env.S3_ACCESS_KEY_ID,
@@ -70,7 +69,7 @@ const adapter = s3Adapter({
     endpoint: process.env.S3_ENDPOINT,
   },
   bucket: process.env.S3_BUCKET,
-})
+}
 
 export default buildConfig({
   admin: {
@@ -246,13 +245,28 @@ export default buildConfig({
         },
       },
     }),
-    cloudStorage({
+    s3Storage({
       collections: {
-        media: { adapter, prefix: 'media' },
-        images: { adapter, prefix: 'images' },
-        documents: { adapter, prefix: 'documents' },
+        media: {
+          prefix: 'media',
+        },
+        images: {
+          prefix: 'images',
+        },
+        documents: {
+          prefix: 'documents',
+        },
       },
+      config: s3config.config,
+      bucket: s3config.bucket,
     }),
+    // cloudStorage({
+    //   collections: {
+    //     media: { adapter, prefix: 'media' },
+    //     images: { adapter, prefix: 'images' },
+    //     documents: { adapter, prefix: 'documents' },
+    //   },
+    // }),
   ],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
