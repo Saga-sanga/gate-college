@@ -49,6 +49,7 @@ const Users: CollectionConfig = {
         },
       ],
       access: {
+        read: adminFieldLevel,
         update: adminFieldLevel,
         create: adminFieldLevel,
       },
