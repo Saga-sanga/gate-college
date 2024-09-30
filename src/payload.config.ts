@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
@@ -144,13 +145,18 @@ export default buildConfig({
       ]
     },
   }),
-  db: sqliteAdapter({
-    client: {
-      // url: process.env.DATABASE_URI || '',
-      url: process.env.TURSO_DATABASE_URL,
-      authToken: process.env.TURSO_AUTH_TOKEN,
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.SUPABASE_DATABASE_URL,
     },
   }),
+  // db: sqliteAdapter({
+  //   client: {
+  //     // url: process.env.DATABASE_URI || '',
+  //     url: process.env.TURSO_DATABASE_URL,
+  //     authToken: process.env.TURSO_AUTH_TOKEN,
+  //   },
+  // }),
   collections: [Pages, Posts, Events, Media, Images, Documents, Categories, Users],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
@@ -260,13 +266,6 @@ export default buildConfig({
       config: s3config.config,
       bucket: s3config.bucket,
     }),
-    // cloudStorage({
-    //   collections: {
-    //     media: { adapter, prefix: 'media' },
-    //     images: { adapter, prefix: 'images' },
-    //     documents: { adapter, prefix: 'documents' },
-    //   },
-    // }),
   ],
   secret: process.env.PAYLOAD_SECRET,
   sharp,

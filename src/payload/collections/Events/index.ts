@@ -1,7 +1,6 @@
 import { authenticated } from '@/payload/access/authenticated'
 import { authenticatedOrPublished } from '@/payload/access/authenticatedOrPublished'
 import { Banner } from '@/payload/blocks/Banner'
-import { Code } from '@/payload/blocks/Code'
 import { MediaBlock } from '@/payload/blocks/MediaBlock'
 import { slugField } from '@/payload/fields/slug'
 import { generatePreviewPath } from '@/payload/utilities/generatePreviewPath'
