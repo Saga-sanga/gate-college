@@ -12,6 +12,7 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
 
     payload.logger.info(`Revalidating event at path: ${path}`)
     revalidatePath(path)
+    revalidatePath('/')
   }
 
   // If the page was previously published, we need to revalidate the old path
@@ -21,6 +22,7 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
     payload.logger.info(`Revalidating old event at path: ${oldPath}`)
 
     revalidatePath(oldPath)
+    revalidatePath('/')
   }
   return doc
 }
