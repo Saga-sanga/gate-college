@@ -21,7 +21,7 @@ export async function HighlightSection() {
           <h2 className="font-serif text-5xl capitalize">{highlight.title}</h2>
           <hr className="w-[15%] border-t-4 mt-1 border-secondary" />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20">
           {highlight['youtube-link'] && (
             <iframe
               className="w-full"
