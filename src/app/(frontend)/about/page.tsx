@@ -1,7 +1,13 @@
 import { MainHero } from '@/components/MainHero'
 import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
+import { Metadata } from 'next'
 import { About } from 'src/payload-types'
+
+export const metadata: Metadata = {
+  title: 'About Page | GATE ATC',
+  description: '',
+}
 
 export default async function AboutPage() {
   const { hero, content } = (await getCachedGlobal('about', 1)()) as About

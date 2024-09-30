@@ -1,14 +1,18 @@
-import { Program } from 'src/payload-types'
+import { Config } from 'src/payload-types'
 import { CallToApply } from './CallToApply'
 import { MainHero } from './MainHero'
 import RichText from './RichText'
 
+type PickedGlobals = Pick<
+  Config['globals'],
+  'programs' | 'student-life' | 'tution-fees'
+>[keyof Pick<Config['globals'], 'programs' | 'student-life' | 'tution-fees'>]
+
 type Props = {
-  hero: Program['hero']
-  content: Program['content']
+  global: PickedGlobals
 }
 
-export function RichTextPage({ hero, content }: Props) {
+export function RichTextPage({ global: { hero, content } }: Props) {
   return (
     <>
       <MainHero hero={hero} />
