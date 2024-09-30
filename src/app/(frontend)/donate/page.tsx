@@ -3,6 +3,13 @@ import { getCachedGlobal } from '@/utilities/getGlobals'
 import Script from 'next/script'
 import { Donation } from 'src/payload-types'
 import { FunraiseForm } from './components/FunraiseForm'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Donate Page | GATE ATC',
+  description:
+    'The donate page of GATE ATC detailing on the donation process and containing a donation widget to donate to the college',
+}
 
 export default async function DonatePage() {
   const { title, content } = (await getCachedGlobal('donation', 1)()) as Donation

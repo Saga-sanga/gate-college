@@ -3,6 +3,13 @@ import { MainHero } from '@/components/MainHero'
 import RichText from '@/components/RichText'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import { Apply } from 'src/payload-types'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Apply Page | GATE ATC',
+  description:
+    'The apply page of GATE ATC giving information and resources related to the application process',
+}
 
 export default async function ApplyPage() {
   const { hero, content } = (await getCachedGlobal('apply', 1)()) as Apply

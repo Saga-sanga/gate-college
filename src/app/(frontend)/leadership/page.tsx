@@ -2,6 +2,13 @@ import { cn } from '@/utilities/cn'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import Image from 'next/image'
 import type { Leadership } from 'src/payload-types'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Leadership Page | GATE ATC',
+  description:
+    'The leadership page of GATE ATC which contains a list of all the faculty, staff and leaders that work in the institution',
+}
 
 type Group = Leadership['content'][number]
 

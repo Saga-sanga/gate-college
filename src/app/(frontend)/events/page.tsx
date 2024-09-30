@@ -5,6 +5,13 @@ import configPromise from '@payload-config'
 // import util from 'util'
 import { Suspense } from 'react'
 import { EventsSkeletion } from './components/EventsSkeletion'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Events Page | GATE ATC',
+  description:
+    'The events page of GATE ATC giving a detailed listing of all upcoming events for the college which can be categorsed by date and week',
+}
 
 export default async function EventsPage({
   searchParams,

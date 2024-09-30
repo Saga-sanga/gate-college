@@ -7,6 +7,12 @@ import { EventsSection } from '@/components/EventsSection'
 import { HighlightSection } from '@/components/HighlightSection'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import { HeroMain } from 'src/payload-types'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'GATE ATC',
+  description: 'GATE Adventist Theology College website home page',
+}
 
 export default async function Page() {
   const { hero } = (await getCachedGlobal('hero-main', 1)()) as HeroMain

@@ -6,7 +6,7 @@ import { About } from 'src/payload-types'
 
 export const metadata: Metadata = {
   title: 'About Page | GATE ATC',
-  description: '',
+  description: 'The about page of GATE ATC detailing the history and values held by the college',
 }
 
 export default async function AboutPage() {
