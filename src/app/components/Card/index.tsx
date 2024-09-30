@@ -43,7 +43,7 @@ export const Card: React.FC<{
       <div className="p-4">
         <div className="flex justify-between items-center mb-4">
           {showCategories && hasCategories && (
-            <div className="uppercase text-sm ">
+            <div className="uppercase text-sm text-secondary">
               {showCategories && hasCategories && (
                 <div>
                   {categories?.map((category, index) => {
@@ -68,12 +68,14 @@ export const Card: React.FC<{
               )}
             </div>
           )}
-          <time dateTime={publishedAt}>{formatDateLocale(publishedAt)}</time>
+          <time className="text-sm font-medium" dateTime={publishedAt}>
+            {formatDateLocale(publishedAt)}
+          </time>
         </div>
         {titleToUse && (
           <div className="prose">
             <h3>
-              <Link className="not-prose" href={href} ref={link.ref}>
+              <Link className="not-prose text-primary" href={href} ref={link.ref}>
                 {titleToUse}
               </Link>
             </h3>
