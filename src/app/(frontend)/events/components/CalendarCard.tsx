@@ -11,7 +11,7 @@ type Props = {
 }
 
 export function CalendarCard({ today, date, setDate }: Props) {
-  const [month, setMonth] = useState(today)
+  const [month, setMonth] = useState(date)
   return (
     <Card>
       <CardContent className="p-0">

@@ -12,6 +12,4 @@ export const checkRole = (allRoles: User['roles'] = [], user: User = undefined):
     )
       return true
   }
-
-  return false
 }
