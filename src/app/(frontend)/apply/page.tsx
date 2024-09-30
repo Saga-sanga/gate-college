@@ -20,7 +20,7 @@ export default async function ApplyPage() {
             />
           ))}
       </article>
-      <section className="bg-muted py-20"></section>
+      {/* <section className="bg-muted py-20"></section> */}
       <HighlightSection />
     </div>
   )
