@@ -26,7 +26,7 @@ const RichText: React.FC<Props> = ({
         {
           'container ': enableGutter,
           'max-w-none': !enableGutter,
-          'mx-auto prose dark:prose-invert w-full': enableProse,
+          'mx-auto prose dark:prose-invert w-full prose-sm md:prose-lg': enableProse,
         },
         className,
       )}
