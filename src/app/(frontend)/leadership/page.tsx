@@ -40,7 +40,7 @@ export default async function LeadershipPage() {
               height={300}
               // @ts-ignore : valid type
               alt={highlight.image.alt}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full max-h-[22.5rem]"
               priority
             />
           )}
