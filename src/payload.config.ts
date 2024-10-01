@@ -158,6 +158,11 @@ export default buildConfig({
   //   },
   // }),
   collections: [Pages, Posts, Events, Media, Images, Documents, Categories, Users],
+  upload: {
+    limits: {
+      fileSize: 4500000, // 4.5 mb in bytes
+    },
+  },
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [
