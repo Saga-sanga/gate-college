@@ -77,15 +77,17 @@ function ItemProfile({ item }: ItemProfieProps) {
   return (
     <article className="flex flex-row items-center space-x-5">
       <div className={cn(!item.image && 'bg-primary-muted', 'rounded-full shrink-0')}>
-        <Image
-          // @ts-ignore : valid type
-          src={item.image.url}
-          // @ts-ignore : valid type
-          alt={item.image.alt}
-          width={112}
-          height={112}
-          className="rounded-full object-cover h-28 w-28"
-        />
+        {item.image && (
+          <Image
+            // @ts-ignore : valid type
+            src={item.image.url}
+            // @ts-ignore : valid type
+            alt={item.image.alt}
+            width={112}
+            height={112}
+            className="rounded-full object-cover h-28 w-28"
+          />
+        )}
       </div>
       <div>
         <h4 className="font-medium text-lg">{item.name}</h4>
