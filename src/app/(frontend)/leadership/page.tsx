@@ -76,7 +76,7 @@ function ItemsGroup({ group }: { group: Group }) {
 function ItemProfile({ item }: ItemProfieProps) {
   return (
     <article className="flex flex-row items-center space-x-5">
-      <div className={cn(!item.image && 'bg-primary-muted', 'rounded-full shrink-0')}>
+      <div className={cn(!item.image && 'bg-white', 'rounded-full shrink-0 h-28 w-28')}>
         {item.image && (
           <Image
             // @ts-ignore : valid type
