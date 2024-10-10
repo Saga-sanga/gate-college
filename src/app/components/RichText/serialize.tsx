@@ -224,7 +224,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                 <>
                   {node?.headerState ? (
                     <th
-                      className="border prose-p:m-4 !p-0"
+                      className="border not-prose text-start p-4"
                       colSpan={node.colSpan}
                       rowSpan={node.rowSpan}
                     >
@@ -232,7 +232,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                     </th>
                   ) : (
                     <td
-                      className="border prose-p:m-4 !p-0"
+                      className="border not-prose text-start p-4"
                       colSpan={node.colSpan}
                       rowSpan={node.rowSpan}
                     >
