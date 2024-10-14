@@ -21,15 +21,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.9.0
         version: 3.9.0(react-hook-form@7.45.4(react@19.0.0-rc-5dcb0097-20240918))
-      '@libsql/client':
-        specifier: 0.6.2
-        version: 0.6.2
       '@payloadcms/db-postgres':
         specifier: 3.0.0-beta.109
         version: 3.0.0-beta.109(@libsql/client@0.6.2)(payload@3.0.0-beta.109(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918))(react@19.0.0-rc-5dcb0097-20240918)(typescript@5.5.4))(react@19.0.0-rc-5dcb0097-20240918)(types-react@19.0.0-rc.0)
-      '@payloadcms/db-sqlite':
-        specifier: 3.0.0-beta.109
-        version: 3.0.0-beta.109(payload@3.0.0-beta.109(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918))(react@19.0.0-rc-5dcb0097-20240918)(typescript@5.5.4))(pg@8.11.3)(react@19.0.0-rc-5dcb0097-20240918)(types-react@19.0.0-rc.0)
       '@payloadcms/live-preview-react':
         specifier: 3.0.0-beta.109
         version: 3.0.0-beta.109(react-dom@19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918))(react@19.0.0-rc-5dcb0097-20240918)
@@ -1469,11 +1463,6 @@ packages:
 
   '@payloadcms/db-postgres@3.0.0-beta.109':
     resolution: {integrity: sha512-j/USz/1kTijpBjLYqyyWN5Dkp5sd7PnSNwow+nEwF0ynoHfUQLyc2YQCaJpsGaoalDV4ToYEnMlW97HVIg2XIw==}
-    peerDependencies:
-      payload: 3.0.0-beta.109
-
-  '@payloadcms/db-sqlite@3.0.0-beta.109':
-    resolution: {integrity: sha512-jtrMT6IPqn3X8xkSqVVqrvyMth/gLfQ57NDK4+NRrACCkYrqDrIcF9145fqyA+p33I00zOWLzk9Ufm/iOEtbGQ==}
     peerDependencies:
       payload: 3.0.0-beta.109
 
@@ -7152,10 +7141,12 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+    optional: true
 
   '@libsql/core@0.6.2':
     dependencies:
       js-base64: 3.7.7
+    optional: true
 
   '@libsql/darwin-arm64@0.3.19':
     optional: true
@@ -7172,8 +7163,10 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+    optional: true
 
-  '@libsql/isomorphic-fetch@0.2.5': {}
+  '@libsql/isomorphic-fetch@0.2.5':
+    optional: true
 
   '@libsql/isomorphic-ws@0.1.5':
     dependencies:
@@ -7182,6 +7175,7 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+    optional: true
 
   '@libsql/linux-arm64-gnu@0.3.19':
     optional: true
@@ -7210,7 +7204,8 @@ snapshots:
       react: 19.0.0-rc-5dcb0097-20240918
       react-dom: 19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918)
 
-  '@neon-rs/load@0.0.4': {}
+  '@neon-rs/load@0.0.4':
+    optional: true
 
   '@next/env@15.0.0-canary.160': {}
 
@@ -7308,49 +7303,6 @@ snapshots:
       - sql.js
       - sqlite3
       - supports-color
-
-  '@payloadcms/db-sqlite@3.0.0-beta.109(payload@3.0.0-beta.109(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918))(react@19.0.0-rc-5dcb0097-20240918)(typescript@5.5.4))(pg@8.11.3)(react@19.0.0-rc-5dcb0097-20240918)(types-react@19.0.0-rc.0)':
-    dependencies:
-      '@libsql/client': 0.6.2
-      '@payloadcms/drizzle': 3.0.0-beta.109(@libsql/client@0.6.2)(payload@3.0.0-beta.109(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918))(react@19.0.0-rc-5dcb0097-20240918)(typescript@5.5.4))(pg@8.11.3)(react@19.0.0-rc-5dcb0097-20240918)(types-react@19.0.0-rc.0)
-      console-table-printer: 2.11.2
-      drizzle-kit: 0.23.2-df9e596
-      drizzle-orm: 0.32.1(@libsql/client@0.6.2)(pg@8.11.3)(react@19.0.0-rc-5dcb0097-20240918)(types-react@19.0.0-rc.0)
-      payload: 3.0.0-beta.109(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918))(react@19.0.0-rc-5dcb0097-20240918)(typescript@5.5.4)
-      prompts: 2.4.2
-      to-snake-case: 1.0.0
-      uuid: 9.0.0
-    transitivePeerDependencies:
-      - '@aws-sdk/client-rds-data'
-      - '@cloudflare/workers-types'
-      - '@electric-sql/pglite'
-      - '@neondatabase/serverless'
-      - '@op-engineering/op-sqlite'
-      - '@opentelemetry/api'
-      - '@planetscale/database'
-      - '@prisma/client'
-      - '@tidbcloud/serverless'
-      - '@types/better-sqlite3'
-      - '@types/pg'
-      - '@types/react'
-      - '@types/sql.js'
-      - '@vercel/postgres'
-      - '@xata.io/client'
-      - better-sqlite3
-      - bufferutil
-      - bun-types
-      - expo-sqlite
-      - knex
-      - kysely
-      - mysql2
-      - pg
-      - postgres
-      - prisma
-      - react
-      - sql.js
-      - sqlite3
-      - supports-color
-      - utf-8-validate
 
   '@payloadcms/drizzle@3.0.0-beta.109(@libsql/client@0.6.2)(payload@3.0.0-beta.109(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-5dcb0097-20240918(react@19.0.0-rc-5dcb0097-20240918))(react@19.0.0-rc-5dcb0097-20240918)(typescript@5.5.4))(pg@8.11.3)(react@19.0.0-rc-5dcb0097-20240918)(types-react@19.0.0-rc.0)':
     dependencies:
@@ -9051,7 +9003,8 @@ snapshots:
 
   damerau-levenshtein@1.0.8: {}
 
-  data-uri-to-buffer@4.0.1: {}
+  data-uri-to-buffer@4.0.1:
+    optional: true
 
   data-view-buffer@1.0.1:
     dependencies:
@@ -9136,7 +9089,8 @@ snapshots:
 
   detect-file@1.0.0: {}
 
-  detect-libc@2.0.2: {}
+  detect-libc@2.0.2:
+    optional: true
 
   detect-libc@2.0.3: {}
 
@@ -9901,6 +9855,7 @@ snapshots:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.3.3
+    optional: true
 
   file-entry-cache@6.0.1:
     dependencies:
@@ -9967,6 +9922,7 @@ snapshots:
   formdata-polyfill@4.0.10:
     dependencies:
       fetch-blob: 3.2.0
+    optional: true
 
   fraction.js@4.3.7: {}
 
@@ -10362,7 +10318,8 @@ snapshots:
 
   joycon@3.1.1: {}
 
-  js-base64@3.7.7: {}
+  js-base64@3.7.7:
+    optional: true
 
   js-beautify@1.15.1:
     dependencies:
@@ -10496,6 +10453,7 @@ snapshots:
       '@libsql/linux-x64-gnu': 0.3.19
       '@libsql/linux-x64-musl': 0.3.19
       '@libsql/win32-x64-msvc': 0.3.19
+    optional: true
 
   lilconfig@2.1.0: {}
 
@@ -10670,7 +10628,8 @@ snapshots:
 
   node-addon-api@6.1.0: {}
 
-  node-domexception@1.0.0: {}
+  node-domexception@1.0.0:
+    optional: true
 
   node-fetch@2.7.0:
     dependencies:
@@ -10681,6 +10640,7 @@ snapshots:
       data-uri-to-buffer: 4.0.1
       fetch-blob: 3.2.0
       formdata-polyfill: 4.0.10
+    optional: true
 
   node-releases@2.0.18: {}
 
@@ -11906,7 +11866,8 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  web-streams-polyfill@3.3.3: {}
+  web-streams-polyfill@3.3.3:
+    optional: true
 
   webidl-conversions@3.0.1: {}
 

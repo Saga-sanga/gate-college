@@ -1,5 +1,4 @@
 // storage-adapter-import-placeholder
-import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
