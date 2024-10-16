@@ -11,7 +11,7 @@ export const contacts: ContactItems = [
   },
   {
     label: 'VP Academic Administration',
-    phone: '+91 6301569568',
+    phone: '+91 9145554348',
   },
   {
     label: 'Business Manager',
