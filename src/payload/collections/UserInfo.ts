@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload'
 import { adminOrSelf } from '../access/adminOrSelf'
+import { adminFieldLevel } from '../access/admin'
 
 const UserInfo: CollectionConfig = {
   slug: 'user-info',
@@ -53,6 +54,18 @@ const UserInfo: CollectionConfig = {
           type: 'text',
         },
       ],
+    },
+    {
+      name: 'user',
+      type: 'relationship',
+      relationTo: 'users',
+      hasMany: false,
+      admin: {
+        allowCreate: false,
+      },
+      access: {
+        update: adminFieldLevel,
+      },
     },
   ],
   timestamps: true,
