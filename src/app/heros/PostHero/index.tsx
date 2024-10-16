@@ -40,7 +40,7 @@ export const PostHero: React.FC<{
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-16">
             <div className="flex flex-col gap-4">
-              {populatedAuthors && (
+              {populatedAuthors.length > 0 && (
                 <div className="flex flex-col gap-1">
                   <p className="text-sm">Author</p>
                   {populatedAuthors.map((author, index) => {
