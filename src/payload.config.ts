@@ -45,6 +45,7 @@ import { Images } from './payload/collections/Images'
 import { Donation } from './payload/globals/Donation'
 import { Apply } from './payload/globals/Apply'
 import { Documents } from './payload/collections/Documents'
+import { Footer } from './payload/globals/Footer/Footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -183,6 +184,7 @@ export default buildConfig({
     Donation,
     Leadership,
     Apply,
+    Footer,
   ],
   plugins: [
     redirectsPlugin({

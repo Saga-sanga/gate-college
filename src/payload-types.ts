@@ -39,6 +39,7 @@ export interface Config {
     donation: Donation;
     leadership: Leadership;
     apply: Apply;
+    footer: Footer;
   };
   locale: null;
   user: User & {
@@ -1160,6 +1161,22 @@ export interface Apply {
           [k: string]: unknown;
         } | null;
         richText_html?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  contacts?:
+    | {
+        label: string;
+        phone: string;
         id?: string | null;
       }[]
     | null;

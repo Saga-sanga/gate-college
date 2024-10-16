@@ -9,21 +9,37 @@ export const Footer: GlobalConfig = {
     read: () => true,
   },
   fields: [
+    // {
+    // name: 'tagline',
+    // type: 'textarea',
+    // required: true,
+    // defaultValue: '',
+    // },
+    // {
+    //   name: 'navItems',
+    //   type: 'array',
+    //   fields: [
+    //     link({
+    //       appearances: false,
+    //     }),
+    //   ],
+    //   maxRows: 6,
+    // },
     {
-      name: 'tagline',
-      type: 'textarea',
-      // required: true,
-      // defaultValue: '',
-    },
-    {
-      name: 'navItems',
+      name: 'contacts',
       type: 'array',
       fields: [
-        link({
-          appearances: false,
-        }),
+        {
+          name: 'label',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'phone',
+          type: 'text',
+          required: true,
+        },
       ],
-      maxRows: 6,
     },
   ],
   hooks: {
