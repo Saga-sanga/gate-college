@@ -13,6 +13,7 @@ import { Providers } from '../providers'
 import { InitTheme } from '../providers/Theme/InitTheme'
 import { mergeOpenGraph } from '../utilities/mergeOpenGraph'
 import '@/styles/globals.scss'
+import Script from 'next/script'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,6 +21,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         {/* <InitTheme /> */}
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
+        {/* <!-- Google tag (gtag.js) -->  */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GCPTEPNHWR"
+          strategy="beforeInteractive"
+        />
+        <Script id="g-tag-init" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-GCPTEPNHWR');`}
+        </Script>
       </head>
       <body>
         <Providers>
