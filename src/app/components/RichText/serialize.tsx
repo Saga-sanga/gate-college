@@ -211,8 +211,8 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
 
             case 'table': {
               return (
-                <table className="border">
-                  <tbody>{serializedChildren}</tbody>
+                <table className="border rounded">
+                  <tbody className="not-prose">{serializedChildren}</tbody>
                 </table>
               )
             }
@@ -224,7 +224,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                 <>
                   {node?.headerState ? (
                     <th
-                      className="border not-prose text-start p-4"
+                      className="border text-start p-4"
                       colSpan={node.colSpan}
                       rowSpan={node.rowSpan}
                     >
@@ -232,7 +232,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                     </th>
                   ) : (
                     <td
-                      className="border not-prose text-start p-4"
+                      className="border text-start p-4"
                       colSpan={node.colSpan}
                       rowSpan={node.rowSpan}
                     >
