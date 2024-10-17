@@ -57,7 +57,7 @@ export default async function EventsPage({
   // console.log(util.inspect(events, { depth: null, colors: true }))
 
   return (
-    <div className="container mx-auto py-6">
+    <div className="container mx-auto mt-12 py-6">
       <h1 className="text-3xl font-bold mb-6 text-primary">Calendar of Events</h1>
       <Suspense key={currentDate} fallback={<EventsSkeletion />}>
         <EventsContainer events={events.docs} selectedDate={currentDate} mode={mode} />

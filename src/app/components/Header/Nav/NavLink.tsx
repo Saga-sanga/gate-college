@@ -15,7 +15,8 @@ export function NavLink({ navItem, className, onClick }: NavLinkProps) {
       onClick={onClick}
       href={navItem.href}
       className={cn(
-        'text-white capitalize font-medium text-sm hover:underline hover:underline-offset-2',
+        'relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 dark:after:bg-black after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100',
+        'text-white capitalize font-medium text-sm',
         className,
       )}
     >

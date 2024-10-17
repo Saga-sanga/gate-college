@@ -5,6 +5,7 @@ import { Logo } from '../Logo/Logo'
 import { leftNav, rightNav } from '@/config/navigation'
 import { NavLink } from './Nav/NavLink'
 import { useState } from 'react'
+import Link from 'next/link'
 
 type Props = {
   className?: string
@@ -20,7 +21,9 @@ export function DrawerSheet({ className }: Props) {
       <SheetContent side="left">
         <SheetHeader>
           <SheetTitle className="text-primary font-medium pl-4">
-            <Logo />
+            <Link onClick={() => setOpen(false)} href="/">
+              <Logo />
+            </Link>
           </SheetTitle>
         </SheetHeader>
         <div className="flex flex-col space-y-3 mt-8 pl-6">
