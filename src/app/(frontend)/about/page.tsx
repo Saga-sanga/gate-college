@@ -15,7 +15,7 @@ export default async function AboutPage() {
   return (
     <div>
       <MainHero hero={hero} />
-      <article className="space-y-12 mt-12">
+      <article className="space-y-16 mt-16">
         {content.length > 0 &&
           content.map((item, i) => (
             <RichText className="prose-lg prose-h2:text-primary" key={i} content={item.richText} />
