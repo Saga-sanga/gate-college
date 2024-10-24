@@ -19,6 +19,7 @@ export default function YoutubeEmbed({ youtubeLink, title }: YoutubeEmbedProps) 
       height="315"
       src={convertEmbedURL(youtubeLink)}
       title={title}
+      loading="lazy"
       allowFullScreen
     ></iframe>
   )
