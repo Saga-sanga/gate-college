@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import { Fragment } from 'react'
 import { MainHero } from '@/components/MainHero'
 import { InfoCardList } from '@/components/InfoCardList'
