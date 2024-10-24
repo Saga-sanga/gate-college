@@ -899,6 +899,14 @@ export interface StudentLife {
       | null;
     media: number | Media;
   };
+  'highlight-reel'?: {
+    'highlight-images'?:
+      | {
+          picture?: (number | null) | Image;
+          id?: string | null;
+        }[]
+      | null;
+  };
   content?:
     | {
         richText?: {

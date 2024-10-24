@@ -128,6 +128,7 @@ const Carousel: React.FC<CarouselProps> = ({
     const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()))
     setScrollProgress(progress * 100)
   }, [])
+
   useEffect(() => {
     if (!emblaApi) return
 
@@ -272,11 +273,12 @@ export const SliderContainer = ({
 }
 export const Slider: React.FC<SliderProps> = ({ children, className, thumnailSrc }) => {
   const { isScale, setSlidesArr } = useCarouselContext()
-  console.log(thumnailSrc)
+  // console.log(thumnailSrc)
 
   const addImgToSlider = useCallback(() => {
     setSlidesArr((prev: any) => [...prev, thumnailSrc])
-  }, [])
+  }, [thumnailSrc, setSlidesArr])
+
   useEffect(() => {
     addImgToSlider()
   }, [])

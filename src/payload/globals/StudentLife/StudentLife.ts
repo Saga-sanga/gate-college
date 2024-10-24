@@ -31,6 +31,25 @@ export const StudentLife: GlobalConfig = {
           label: 'Content',
           fields: [
             {
+              name: 'highlight-reel',
+              label: false,
+              type: 'group',
+              fields: [
+                {
+                  name: 'highlight-images',
+                  type: 'array',
+                  fields: [
+                    {
+                      name: 'picture',
+                      label: false,
+                      type: 'upload',
+                      relationTo: 'images',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
               name: 'content',
               type: 'array',
               fields: [
