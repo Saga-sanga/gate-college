@@ -5,7 +5,7 @@ import { YouTubeEmbed } from '@next/third-parties/google'
 
 export async function HighlightSection() {
   const highlight = (await getCachedGlobal('highlight-section', 1)()) as HighlightSection
-  const videoId = highlight['youtube-link'].split('=')[1]
+  const videoId = highlight['youtube-link']?.split('=')[1]
 
   // return nothing if highlight is empty
   if (Object.keys(highlight).length === 0) {

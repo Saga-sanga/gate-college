@@ -4,21 +4,20 @@ export const infoCardConfig: InfoCardConfig[] = [
   {
     title: 'What can I study?',
     description:
-      "Choose from over 150 programs and degrees. At GATE, you can change your major, but you won't have to change your school!",
+      'Our Bachelor of Theology is a 160-credit-hour program offering holistic pastoral training, blending academic rigor with practical ministry skills to equip future pastors for effective service.',
     label: 'View our Programs',
     href: '/programs',
   },
   {
     title: 'What will it cost?',
     description:
-      'You can afford a top-tier private education. Find out how tuition and financial aid work, including the Net Price Calculator',
+      'We offer affordable tuition and hostel fees, complemented by scholarships for dedicated students who excel in merit, character, and personality. These opportunities make quality education accessible while rewarding hard work and integrity.',
     label: 'Check our fees',
     href: '/tution-fees',
   },
   {
     title: 'How can I apply?',
-    description:
-      "The decision to attend college is one of the most important ones you'll ever make—we're here to make it easy, and you can start now.",
+    description: 'Apply now through our official website to secure your opportunity!',
     label: 'Learn More',
     href: '/apply',
   },

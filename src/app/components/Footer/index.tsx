@@ -17,7 +17,7 @@ export async function Footer() {
               <img
                 alt="Payload Logo"
                 className="max-w-56 invert-0"
-                src="/gate-logo.png"
+                src="/atc_white.webp"
                 // src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
               />
             </picture>
