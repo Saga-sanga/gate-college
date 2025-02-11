@@ -75,8 +75,8 @@ function ItemsGroup({ group }: { group: Group }) {
 
 function ItemProfile({ item }: ItemProfieProps) {
   return (
-    <article className="flex flex-row items-center space-x-5">
-      <div className={cn(!item.image && 'bg-white', 'rounded-full shrink-0 h-28 w-28')}>
+    <article className="flex flex-col items-center space-y-5">
+      <div className={cn(!item.image && 'bg-white', 'rounded-full shrink-0 h-36 w-36')}>
         {item.image && (
           <Image
             // @ts-ignore : valid type
@@ -85,13 +85,13 @@ function ItemProfile({ item }: ItemProfieProps) {
             alt={item.image.alt}
             width={112}
             height={112}
-            className="rounded-full object-cover h-28 w-28"
+            className="rounded-full object-cover h-36 w-36"
           />
         )}
       </div>
-      <div>
-        <h4 className="font-medium text-lg">{item.name}</h4>
-        <span className="text-sm text-muted-foreground">{item.descripton}</span>
+      <div className="px-4 text-justify">
+        <h4 className="font-medium text-xl mb-1.5">{item.name}</h4>
+        <span className="text-base text-muted-foreground">{item.descripton}</span>
       </div>
     </article>
   )
