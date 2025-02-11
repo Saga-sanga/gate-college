@@ -53,7 +53,7 @@ export async function Footer() {
         </div>
       </div>
       <div className="border-t border-muted-foreground text-sm text-center py-4">
-        <p className="container">©{new Date().getFullYear()} GATE Adventist Theology College</p>
+        <p className="container">©{new Date().getFullYear()} GATE Adventist Theological College</p>
       </div>
     </footer>
   )
