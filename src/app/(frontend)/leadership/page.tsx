@@ -51,7 +51,7 @@ export default async function LeadershipPage() {
           <p className="text-lg text-muted-foreground">{highlight.description}</p>
         </div>
       </section>
-      <div className="bg-muted mt-12">
+      <div className="bg-muted mt-12 pb-10">
         <section className="container py-12 px-8 space-y-20">
           {content.length > 0 &&
             content.map((group) => <ItemsGroup key={group.id} group={group} />)}
@@ -63,9 +63,9 @@ export default async function LeadershipPage() {
 
 function ItemsGroup({ group }: { group: Group }) {
   return (
-    <div className="space-y-8">
-      <h3 className="uppercase text-xl text-foreground/75 font-medium">{group.heading}</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div className="space-y-16">
+      <h3 className="uppercase text-2xl text-foreground/75 font-medium">{group.heading}</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
         {group?.items?.length > 0 &&
           group.items.map((item) => <ItemProfile key={item.id} item={item} />)}
       </div>
@@ -89,9 +89,9 @@ function ItemProfile({ item }: ItemProfieProps) {
           />
         )}
       </div>
-      <div className="px-4 text-justify">
+      <div className="px-4">
         <h4 className="font-medium text-xl mb-1.5">{item.name}</h4>
-        <span className="text-base text-muted-foreground">{item.descripton}</span>
+        <p className="text-base text-muted-foreground text-justify">{item.descripton}</p>
       </div>
     </article>
   )

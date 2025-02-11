@@ -32,8 +32,8 @@ export default async function AboutPage() {
 }
 
 function GoogleMapEmbed() {
-  const src =
-    'https://www.google.com/maps/embed/v1/place?q=Gate+Training+Center,+Falakata,+Parangarpar,+West+Bengal+735211&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8'
+  const location = 'GATE+Adventist+Theological+College,+Parangarpar,+Falakata,+West+Bengal,+India'
+  const src = `https://www.google.com/maps/embed/v1/place?q=${location}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`
   return (
     <div className="w-full h-[500px] max-w-full">
       <iframe
