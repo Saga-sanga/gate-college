@@ -4,7 +4,7 @@ import { RelatedPosts } from '@/blocks/RelatedPosts'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
-import { draftMode, headers } from 'next/headers'
+import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from 'src/app/components/RichText'
 
@@ -12,7 +12,6 @@ import type { Post } from '../../../../payload-types'
 
 import { PostHero } from '../../../heros/PostHero'
 import { generateMeta } from '../../../utilities/generateMeta'
-import PageClient from './page.client'
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise })

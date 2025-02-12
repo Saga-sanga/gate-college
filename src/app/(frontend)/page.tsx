@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic'
 import { Fragment } from 'react'
 import { MainHero } from '@/components/MainHero'
 import { InfoCardList } from '@/components/InfoCardList'
@@ -9,6 +8,8 @@ import { getCachedGlobal } from '@/utilities/getGlobals'
 import { HeroMain } from 'src/payload-types'
 import { Metadata } from 'next'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
+
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'GATE Adventist Training Center',
