@@ -14,3 +14,9 @@ export type ContactItems = {
   label: string
   phone: string
 }[]
+
+export type CallToAction = {
+  description: string
+  href: string
+  label: string
+}
