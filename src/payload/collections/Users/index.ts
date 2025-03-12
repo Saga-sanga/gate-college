@@ -8,7 +8,7 @@ import { adminOrSelf } from '@/payload/access/adminOrSelf'
 const Users: CollectionConfig = {
   slug: 'users',
   access: {
-    admin: ({ req: { user } }) => checkRole(['admin', 'manager'], user),
+    admin: ({ req: { user } }) => checkRole(['user', 'admin', 'manager'], user),
     create: admin,
     delete: admin,
     read: adminOrSelf,
@@ -28,7 +28,7 @@ const Users: CollectionConfig = {
       name: 'roles',
       type: 'select',
       required: true,
-      defaultValue: 'user',
+      defaultValue: ['user'],
       hasMany: true,
       saveToJWT: true,
       hooks: {
