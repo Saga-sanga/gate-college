@@ -17,7 +17,7 @@ export const About: GlobalConfig = {
   slug: 'about',
   access: {
     update: authenticated,
-    read: authenticatedOrPublished,
+    read: authenticated,
   },
   fields: [
     {

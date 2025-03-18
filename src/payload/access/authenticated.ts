@@ -6,4 +6,4 @@ import { checkRole } from './checkRole'
 type isAuthenticated = (args: AccessArgs<User>) => boolean
 
 export const authenticated: isAuthenticated = ({ req: { user } }) =>
-  checkRole(['admin', 'manager'], user)
+  checkRole(['admin', 'manager', 'user'], user)

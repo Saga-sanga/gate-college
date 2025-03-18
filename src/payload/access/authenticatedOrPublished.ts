@@ -2,7 +2,7 @@ import type { Access } from 'payload'
 import { checkRole } from './checkRole'
 
 export const authenticatedOrPublished: Access = ({ req: { user } }) => {
-  if (checkRole(['admin', 'manager'], user)) {
+  if (checkRole(['admin', 'manager', 'user'], user)) {
     return true
   }
 
