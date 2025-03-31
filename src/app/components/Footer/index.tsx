@@ -17,7 +17,7 @@ export async function Footer() {
               <img
                 alt="Payload Logo"
                 className="max-w-56 invert-0"
-                src="/atc_white.webp"
+                src="/gate-logo.png"
                 // src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
               />
             </picture>
@@ -53,7 +53,7 @@ export async function Footer() {
         </div>
       </div>
       <div className="border-t border-muted-foreground text-sm text-center py-4">
-        <p className="container">©{new Date().getFullYear()} GATE Adventist Theological College</p>
+        <p className="container">©{new Date().getFullYear()} GATE Adventist Theology College</p>
       </div>
     </footer>
   )
